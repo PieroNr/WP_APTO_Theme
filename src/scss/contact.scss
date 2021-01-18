@@ -1,0 +1,34 @@
+// Foundations
+@import "./foundation/variables";
+@import "./foundation/functions";
+@import "./foundation/mixins";
+@import "./foundation/normalize";
+@import "./foundation/grid";
+@import "./foundation/animations";
+
+// Elements
+@import "./elements/buttons";
+@import "./elements/typography";
+@import "./elements/form";
+@import "./elements/burger";
+@import "./elements/watch";
+
+// Components
+//@import "./components/nav-css-animation";
+@import "./components/nav-js-animation";
+@import "./components/product";
+@import "./components/dots"; 
+
+//layout
+@import "./layout/section";
+@import "./layout/personnalisation";
+
+
+//Pages
+@import "./pages/sense-fonctions";
+ 
+
+html,body{
+    margin: 0;
+    padding : 0;
+}

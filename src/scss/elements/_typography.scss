@@ -1,0 +1,38 @@
+$font-color : #333333;
+
+.title{ 
+    @include font-size(18, 18);
+    color :$font-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $title-font-family; 
+    @include medium-up(){ 
+        @include font-size(26, 26);
+    }
+}
+.subtitle{ 
+    @include font-size(16, 16);
+    color :$font-color;
+    font-family: $title-font-family; 
+    font-weight: normal;
+    @include medium-up(){ 
+        @include font-size(18, 18);
+    }
+}
+
+p{
+    font-family: $text-font-family; 
+    color : $font-color;
+    @include font-size(16);
+   
+}
+
+.label{
+    font-family: $text-font-family;
+    color : black;
+    font-weight: bold;
+}
+
+
+
+

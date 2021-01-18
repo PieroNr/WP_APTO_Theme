@@ -1,0 +1,13 @@
+
+$product-border :#333;
+
+.c-product{
+    width : 300px;
+    border : 1px solid $product-border;
+    &__button{
+        margin-bottom : 18px;
+    }
+    &__title{
+        border-top : 1px solid $product-border;
+    }
+}

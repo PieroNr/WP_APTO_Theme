@@ -1,0 +1,12 @@
+.c-form{
+    max-width: 600px;
+    margin : auto;
+    &__label{
+        display : inline-block;
+        margin : rem(16) 0 rem(8);
+    }
+    &__buttonContainer{
+        text-align: center;
+        padding-top : rem(16);
+    }
+}

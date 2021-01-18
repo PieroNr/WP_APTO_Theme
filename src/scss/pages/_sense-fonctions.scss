@@ -1,0 +1,104 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.fonctions{
+    padding : 100px 0;
+    position: relative;
+    @media #{$medium-down}{
+        padding : 200px 0 100px;
+    }
+
+    @media #{$large-up}{
+        background : #111111;
+    }
+    &__titre{
+        text-align: left;
+    
+        @media #{$medium-down}{
+            position : absolute;
+            top : 50px;
+            left : 50%;
+            transform: translateX(-50%);
+        }
+        @media #{$large-up}{
+            color : white;
+            margin-bottom : 32px;
+        }
+    }
+}
+
+.titre {
+    display: block;
+    text-align: center;
+
+    &>p {
+        margin : 0;
+        &:first-of-type {
+            font-size: rem(30);
+            line-height: rem(30);
+            margin-bottom: 6px;
+        }
+        &:nth-of-type(2) {
+            font-family: "roboto";
+            font-size: rem(50);
+            line-height: rem(50);
+            color: rgb(33, 178, 235);
+            
+        }
+       
+    }
+}
+
+.fonction{
+    padding : 24px;
+    display: flex;
+    align-items: center;
+   
+    @media #{$medium-up}{
+        padding : 0 24px;
+    }
+
+    @media #{$large-up}{
+        max-width : 1200px;
+        margin : 0 auto;
+    }
+    &__img{
+        width : 140px;
+        flex-shrink: 0;
+        flex-grow: 0;    
+        @media #{$medium-up}{
+            width : 260px;
+        } 
+        @media #{$large-up}{
+           width : 300px;
+        }
+    }
+    &__content{
+        padding : 0 12px;
+        @media #{$medium-up}{
+            padding : 0 24px;
+        } 
+        @media #{$large-up}{
+            padding : 0 144px;
+            max-width : 628px;
+            &>p{
+                color : white;
+                &:first-of-type{
+                    color : #707070;
+                }
+            }
+            
+        }
+    }
+    &:nth-of-type(2n + 1){
+        flex-direction: row-reverse;
+    }
+    &:last-of-type{
+        display : none;
+        @media #{$medium-up}{
+           display : flex;
+        } 
+    }
+}

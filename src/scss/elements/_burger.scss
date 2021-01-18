@@ -1,0 +1,15 @@
+$burger-color : #333;
+
+.burger{
+    position: relative;
+    margin : 16px;
+    display : inline-block;
+    width : 25px;
+    height : 25px;
+    border : 2px solid $burger-color;
+    cursor: pointer;
+    z-index: 100;
+    &.-active{
+        background : $burger-color;
+    }
+}
