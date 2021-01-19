@@ -99,7 +99,9 @@
     /** @link https://developer.wordpress.org/reference/functions/register_nav_menus/*/
     function lpwd_register_menus() {
         register_nav_menus( array(
-            'navigation' =>  'Navigation de mon site'
+            'Header_1' =>  'Header_blanc',
+            'Header_2' =>  'Header_noir',
+            'Footer' =>  'Footer'
         ) );
     }
     add_action( 'init', 'lpwd_register_menus' );
