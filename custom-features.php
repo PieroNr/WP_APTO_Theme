@@ -13,6 +13,8 @@
 
         get_template_part( 'template-parts/characteristique/content-banier' );
         get_template_part( 'template-parts/characteristique/content-principal' );
+        get_template_part( 'template-parts/characteristique/content-secondaire' );
+        get_template_part( 'template-parts/characteristique/content-emballage' );
     endwhile; else:
         
     endif;
