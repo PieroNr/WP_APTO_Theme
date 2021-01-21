@@ -19,27 +19,36 @@
 
     $pagetitle = get_field('page_title');
 
+    $args = array(  
+        'post_type' => 'avis',
+        'posts_per_page' => -1,  
+        'order' => 'ASC', 
+    );
 
-    echo get_field('page_title');
-    if( have_rows('commentaire')):
-        while( have_rows('commentaire') ): the_row();
-        $auteur = get_sub_field('avis_auteur');
+    $avis = new WP_Query( $args );
 
-        echo '<pre>';
-        print_r(get_row());
-        echo '</pre>';
-        $noteCarac = get_sub_field('note_caracteristique');
+    for ($i = 0; $i < count($avis->posts); $i++) {
+
+        $avisID = $avis->posts[$i]->ID;
+        $auteur = get_field( "avis_auteur", $avisID );
+        $avis_titre = $avis->posts[$i]->post_title;
+        $avis_date = get_field( "avis_datepost", $avisID );
+        $avis_commentaire = get_field( "avis_commentaire", $avisID );
+        $avis_note = get_field( "avis_note", $avisID );
+
+        $noteCarac = get_field( "note_caracteristique", $avisID );
+
+        $noteConfort = $noteCarac['carac_confort']['carac_confort_note'];
+        $noteDesign = $noteCarac['carac_design']['carac_design_note'];
+        $noteBatterie = $noteCarac['carac_batterie']['carac_batterie_note'];
+        $notePrix = $noteCarac['carac_prix']['carac_prix_note'];
 
         $totalConfort += $noteCarac['carac_confort']['carac_confort_note'];
         $totalDesign += $noteCarac['carac_design']['carac_design_note'];
         $totalBatterie += $noteCarac['carac_batterie']['carac_batterie_note'];
         $totalPrix += $noteCarac['carac_prix']['carac_prix_note'];
 
-        echo '<pre>';
-        print_r($test);
-        echo '</pre>';
-
-        switch (get_sub_field('avis_note')) {
+        switch ($avis_note) {
             case 1:
                 $numberNoteOne++;
                 break;
@@ -57,28 +66,49 @@
                 break;
         }
 
-        array_push($note, get_sub_field('avis_note'));   
-            
+        array_push($note, $avis_note);
+        ?>
 
-        endwhile;
-    endif;
+        <p>Avis de <?php echo $auteur; ?></p>
+        <ul>
+            <li>Titre : <?php echo $avis_titre; ?></li>
+            <li>Posté le :<?php echo $avis_date; ?></li>
+            <li>Commentaire : <?php echo $avis_commentaire; ?></li>
+            <li>Note donnée : <?php echo $avis_note ?>/5</li>
+            <li>Note Caractéristiques
+                <ul>
+                    <li>Confort : <?php echo $noteConfort ?>/5</li>
+                    <li>Design : <?php echo $noteDesign ?>/5</li>
+                    <li>Batterie : <?php echo $noteBatterie ?>/5</li>
+                    <li>Prix : <?php echo $notePrix ?>/5</li>
+                </ul>
+            </li>
+        </ul>
+
+        <?php 
+        
+    }
     $add = 0;
     for ($i=0; $i < count($note); $i++) { 
         $add += $note[$i];
     }
 
-    echo round(($add / count($note)), 1);
+    //echo round(($add / count($note)), 1);
     $nbrNotes = count($note);
+
+
+    
 
 
 
     ?>
     
-    <h1>Note 1/5 : <?php echo $numberNoteOne ?> - <?php echo round((($numberNoteOne / count($note))*100)); ?>% </h1>
-    <h1>Note 2/5 : <?php echo $numberNoteTwo ?> - <?php echo round((($numberNoteTwo / count($note))*100)); ?>% </h1>
-    <h1>Note 3/5 : <?php echo $numberNoteThree ?> - <?php echo round((($numberNoteThree / count($note))*100)); ?>% </h1>
-    <h1>Note 4/5 : <?php echo $numberNoteFour ?> - <?php echo round((($numberNoteFour / count($note))*100)); ?>% </h1>
-    <h1>Note 5/5 : <?php echo $numberNoteFive ?> - <?php echo round((($numberNoteFive / count($note))*100)); ?>% </h1>
+    
+    <h2>Note 1/5 : <?php echo $numberNoteOne ?> - <?php echo round((($numberNoteOne / count($note))*100)); ?>% </h2>
+    <h2>Note 2/5 : <?php echo $numberNoteTwo ?> - <?php echo round((($numberNoteTwo / count($note))*100)); ?>% </h2>
+    <h2>Note 3/5 : <?php echo $numberNoteThree ?> - <?php echo round((($numberNoteThree / count($note))*100)); ?>% </h2>
+    <h2>Note 4/5 : <?php echo $numberNoteFour ?> - <?php echo round((($numberNoteFour / count($note))*100)); ?>% </h2>
+    <h2>Note 5/5 : <?php echo $numberNoteFive ?> - <?php echo round((($numberNoteFive / count($note))*100)); ?>% </h2>
 
     <h2> Moyenne des notes de caractéristiques : </h2>
     <h3> Confort : <?php echo round($totalConfort / $nbrNotes); ?>/5 </h3>
