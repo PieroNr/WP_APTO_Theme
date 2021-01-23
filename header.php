@@ -24,6 +24,8 @@
         <?php lpwd_clean_custom_menu("navigation") ?>
     </header>
 
-
-    <div class="container">
-
+    <?php if (get_the_title() == "Qui sommes nous ?" || get_the_title() == "Contact" ){ ?>
+        <div class="container -black">
+    <?php } else { ?>
+        <div class="container ">
+    <?php } ?> 
