@@ -1,21 +1,27 @@
-<?php 
+    <div class="sectionEmballage-content">
+        <?php 
 
-    $emballage = get_field('contenu_emballage');
-    $titreEmballage = $emballage['contenu_emballage_title'];
-    $emballageImgQte = $emballage['contenu_emballage_content_ImageQuantity'];
+            $emballage = get_field('contenu_emballage');
+            $titreEmballage = $emballage['contenu_emballage_title'];
+            $emballageImgQte = $emballage['contenu_emballage_content_ImageQuantity']; ?>
 
-    echo ($titreEmballage);
-    echo('<br>');
+            <h2 class="sectionEmballage-content__title"> <?php echo $titreEmballage; ?> </h2>
 
-    for ($i=0; $i < count($emballageImgQte); $i++) { 
+            <div class="sectionEmballage-content-features">
+                <?php for ($i=0; $i < count($emballageImgQte); $i++) { 
 
-        $imgEmballage = $emballageImgQte[$i]['contenu_emballage_content_ImageQuantity_image'];
-        $qteEmballage = $emballageImgQte[$i]['contenu_emballage_content_ImageQuantity_quantity'];
+                    $imgEmballage = wp_get_attachment_image($emballageImgQte[$i]['contenu_emballage_content_ImageQuantity_image']['ID']);
+                    $qteEmballage = $emballageImgQte[$i]['contenu_emballage_content_ImageQuantity_quantity']; ?> 
 
-        echo wp_get_attachment_image( $imgEmballage['ID']);
-        echo $qteEmballage;
-        echo('<br>');
+                    <div class="sectionEmballage-content-featuresUnique">
+                        <div class="sectionEmballage-content-featuresUnique__Img">
+                            <?php echo $imgEmballage; ?>
+                        </div>
+                        <span class="sectionEmballage-content-featuresUnique__title"> <?php echo $qteEmballage; ?> </span>
+                    </div>
 
-    }
-    
-?>
+                <?php } ?>
+
+            </div>
+    </div>
+</div>

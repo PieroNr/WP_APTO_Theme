@@ -1,25 +1,30 @@
-<?php 
-    $characPrincipal = get_field('charac_principal');
-    $carac = $characPrincipal['charac_principal_pfeatures'];;
+<div class="sectionPrincipal">
+    <div class="sectionPrincipal-content">
 
-    for ($i=0; $i < count($carac); $i++) { 
+        <?php 
+            $characPrincipal = get_field('charac_principal');
+            $carac = $characPrincipal['charac_principal_pfeatures'];;
 
-        $typeCaracPrincipal = $carac[$i]['charac_principal_pfeatures_type'];
-        
-        echo("<br>");
-        echo($typeCaracPrincipal);echo("<br>");
+            for ($i=0; $i < count($carac); $i++) { 
 
-        for ($j=0; $j < count($carac[$i]['charac_principal_pfeatures_options']); $j++) { 
-            
-            for ($p=0; $p < count($carac[$i]['charac_principal_pfeatures_options'][$j]); $p++) { 
-                $descriptionCaracPrincipal = $carac[$i]['charac_principal_pfeatures_options'][$j]['charac_principal_pfeatures_options_description'];
+                $typeCaracPrincipal = $carac[$i]['charac_principal_pfeatures_type']; ?>
+                
+                <div class="sectionPrincipal-content-unique">
+                    <span class="sectionPrincipal-content-unique__title"> <?php echo($typeCaracPrincipal); ?> </span>
 
-                echo($descriptionCaracPrincipal);echo("<br>");
-            }        
+                    <?php for ($j=0; $j < count($carac[$i]['charac_principal_pfeatures_options']); $j++) { 
+                        
+                        for ($p=0; $p < count($carac[$i]['charac_principal_pfeatures_options'][$j]); $p++) { 
+                            $descriptionCaracPrincipal = $carac[$i]['charac_principal_pfeatures_options'][$j]['charac_principal_pfeatures_options_description'];?>
 
-        }
-        
-    }
+                            <p class="sectionPrincipal-content-unique__text"> <?php echo($descriptionCaracPrincipal); ?> </p>
+                        <?php }        
 
-    echo("<br>");
-?>
+                    } ?>
+
+                </div>
+                
+            <?php }
+        ?>
+    </div>
+</div>
