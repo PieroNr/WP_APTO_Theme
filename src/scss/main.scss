@@ -7,26 +7,20 @@
 @import "./foundation/animations";
 
 // Elements
-@import "./elements/buttons";
-@import "./elements/typography";
-@import "./elements/input";
 @import "./elements/burger";
-@import "./elements/watch";
 
 // Components
 //@import "./components/nav-css-animation";
 @import "./components/nav-css-animation";
-@import "./components/product";
-@import "./components/dots"; 
-@import "./components/form"; 
 
 //layout
-@import "./layout/section";
-@import "./layout/personnalisation";
 
 
 //Pages
-@import "./pages/sense-fonctions";
+@import "./home";
+@import "./about";
+@import "./features";
+@import "./comment";
  
 
 html,body{
