@@ -1,38 +1,40 @@
-<?php  
+<div class="sectionExplication">
+    <div class="sectionExplication-content">
 
-    $paragraphesExplication = array();
+        <?php  
 
-    if( have_rows('about_section_explication')):
-        while( have_rows('about_section_explication') ): the_row();             
+            if( have_rows('about_section_explication')):
+                while( have_rows('about_section_explication') ): the_row();             
 
-            $titreExplication = get_sub_field("about_section_explication_title");
+                    $titreExplication = get_sub_field("about_section_explication_title"); ?>
 
-            if( have_rows('about_section_explication_paragraphe')):
-                while( have_rows('about_section_explication_paragraphe') ): the_row();
+                    <h3 class="sectionExplication-content__title"> <?php echo ($titreExplication); ?> </h3>
 
-                    $paragraphe = get_sub_field("about_section_explication_paragraphe_texte");
+                    <div class="sectionExplication-content-paragraphe">
 
-                    $temp = [$paragraphe];
-                    array_push($paragraphesExplication, $temp);
+                        <?php 
+                        if( have_rows('about_section_explication_paragraphe')):
+                            while( have_rows('about_section_explication_paragraphe') ): the_row();
+
+                                $paragraphe = get_sub_field("about_section_explication_paragraphe_texte"); ?>
+
+                                <p class="sectionExplication-content-paragraphe__text"> <?php echo $paragraphe; ?> </p>
+                                
+                            <?php endwhile;
+                        endif; ?>
+
+                    </div>
+
+                    <?php 
+                    $imageExplication = wp_get_attachment_image( get_sub_field('about_section_explication_image')['ID'] ); ?>
+
+                    <div class="sectionExplication-content-Img">
+                        <?php echo ($imageExplication); ?>
+                    </div>
                     
-                endwhile;
-            endif;
+                <?php endwhile;
+            endif; 
+        ?>
 
-            $imageExplication = wp_get_attachment_image( get_sub_field('about_section_explication_image')['ID'] );
-
-        endwhile;
-    endif; 
-
-    echo("<br>");
-    echo ($titreExplication);
-    echo("<br>");
-    for ($i=0; $i < count($paragraphesExplication); $i++) { 
-        for ($j=0; $j < count($paragraphesExplication[$i]); $j++) { 
-            echo $paragraphesExplication[$i][$j];
-            echo("<br>");
-        }
-    }; 
-    echo("<br>");
-    echo ($imageExplication);
-    echo("<br>"); 
-?>
+    </div>
+</div>

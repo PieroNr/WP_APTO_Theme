@@ -1,26 +1,29 @@
-<?php 
+<div class="sectionPresentation">
+    <div class="sectionPresentation-content">
 
-    $presentations = array();
+        <?php 
 
-    if( have_rows('about_section_presentation')):
-        while( have_rows('about_section_presentation') ): the_row();             
+            if( have_rows('about_section_presentation')):
+                while( have_rows('about_section_presentation') ): the_row();             
 
-            $titre = get_sub_field("about_section_presentation_title");
+                    $titre = get_sub_field("about_section_presentation_title");
 
-            $paragraphe = get_sub_field("about_section_presentation_paragraphe");
+                    $paragraphe = get_sub_field("about_section_presentation_paragraphe");
 
-            $image = wp_get_attachment_image( get_sub_field('about_section_presentation_image')['ID'] );
+                    $image = wp_get_attachment_image( get_sub_field('about_section_presentation_image')['ID'] ); ?>
 
-            $temp = [$titre, $paragraphe, $image];
-            array_push($presentations, $temp);
+                    <div class="sectionPresentation-content-rubrique">
+                        <div class="sectionPresentation-content-rubrique__Img">
+                            <?php echo $image; ?> 
+                        </div>
 
-        endwhile;
-    endif; 
+                        <h3 class="sectionPresentation-content-rubrique__Title"> <?php echo $titre; ?> </h3>
+                        <p class="sectionPresentation-content-rubrique__Title"> <?php echo $paragraphe; ?> </p>
+                    </div>
+                <?php endwhile;
+            endif; 
 
-    for ($i=0; $i < count($presentations); $i++) { 
-        for ($j=0; $j < count($presentations[$i]); $j++) { 
-            echo $presentations[$i][$j];
-            echo("<br>");
-        }
-    };  
-?>
+        ?>
+
+    </div>
+</div>
