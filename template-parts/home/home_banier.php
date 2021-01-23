@@ -21,10 +21,10 @@
                 endwhile;
             endif;
 
-            $background_img = wp_get_attachment_image( get_sub_field('home_banier_image')['ID']); ?>
+            $background_img = wp_get_attachment_image_src( get_sub_field('home_banier_image')['ID'],'full'); ?>
 
-            <div class="banier">
-                <div class="banier-content">
+            <div class="banier -sectionHome">
+                <div class="banier-content" style="background-image: url(<?php echo $background_img[0]; ?>);">
 
                     <div class="banier-content-titleSlogan">
                         <h1 class="banier-content-titleSlogan__title"><?php echo $title_Site; ?></h1>
@@ -36,9 +36,6 @@
                         <a class="banier-content-buy__button" href="<?php echo $buy_button; ?>">ACHETER</a>
                     </div>
 
-                    <div class="banier-content-background">
-                        <?php echo $background_img; ?>
-                    </div>
 
                 </div>
             </div>

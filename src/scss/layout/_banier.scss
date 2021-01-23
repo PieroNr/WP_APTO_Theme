@@ -1,0 +1,58 @@
+.-sectionHome{
+    width: 100%;
+    height: 100vh;
+}
+
+.banier-content{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4em;
+    height: 100vh;
+
+    &-titleSlogan{
+        font-family: $policeTitre;
+        color: $main_white;
+        &__title{
+            margin: 0;
+            font-size: 5em;
+        }
+        &__slogan{
+            font-size: 3em;
+            margin: 0;
+        }
+    }
+
+    &-buy{
+        margin-top: 30vh;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 23%;
+        font-family: $policeCorps;
+        &__price{
+            color: $main_white;
+            font-size: 2.5em;
+        }
+
+        &__button{
+            background-color: $main_white;
+            font-family: $proxima_black;
+            font-weight: bold;
+            line-height: 2em;
+            font-size: 1.5em; 
+            text-decoration: none;
+            padding: 10px 70px 10px 70px;
+            border-radius: 1rem;
+            color: #222222;
+            box-shadow: 0 0.05em 0.1em rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            outline: none;
+
+            &:hover{
+                background-color: $main_black;
+                color: $main_white;
+            }
+        }
+    }
+}
