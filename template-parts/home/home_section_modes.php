@@ -17,14 +17,38 @@
                     array_push($tab_modes,$oneMode);
 
                 endwhile;
-            endif;
+            endif; ?>
 
-            /*for ($i=0; $i < count($tab_modes); $i++) { 
-                for ($j=0; $j < count($tab_modes[$i]); $j++) { 
-                    echo $tab_modes[$i][$j];
-                    echo("<br>");
-                }
-            };*/ 
+            <div class="modes">
+                <div class="modes-content">
+
+                    <div class="modes-content-titleDesc">
+                        <h2 class="modes-content-titleDesc__title"><?php echo $modes_title; ?></h2>
+                        <p class="modes-content-titleDesc__description"><?php echo $modes_description; ?></p>
+                    </div>
+
+                    <div class="modes-content-detail">
+                        <?php 
+
+                            for ($i=0; $i < count($tab_modes); $i++) { ?>
+                                <div class="modes-content-detail-one">
+                                    <div class="modes-content-detail-one-picto">
+                                        <?php echo $tab_modes[$i][0]; ?>
+                                    </div>
+                                    <p class="modes-content-detail-one__name"><?php echo $tab_modes[$i][1]; ?></p>
+                                </div> 
+                                  
+                            <?php  
+                            };
+
+                         ?>
+                    </div>
+
+                </div>
+            </div>
+
+             
+        <?php
         endwhile;
     endif;
         
