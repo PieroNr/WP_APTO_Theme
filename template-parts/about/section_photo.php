@@ -4,21 +4,19 @@
             if( have_rows('about_section_photo')):
                 while( have_rows('about_section_photo') ): the_row(); ?>
 
-                    <div class="sectionPhoto-content-Entrepreneur">
+                    <div class="sectionPhoto-content-Entrepreneur row d-xs-none">
 
                         <?php if( have_rows('about_section_photo_image')):
                             while( have_rows('about_section_photo_image') ): the_row();
-                                
-                                $image = wp_get_attachment_image( get_sub_field('about_section_photo_image_file')['ID'] );
+
+                                $image = wp_get_attachment_image_src( get_sub_field('about_section_photo_image_file')['ID'],'full');
 
                                 $nom = get_sub_field("about_section_photo_image_title");?>
 
-                                <div class="sectionPhoto-content-EntrepreneurUnique">
+                                <div class="sectionPhoto-content-EntrepreneurUnique col-4">
 
-                                    <div class="sectionPhoto-content-EntrepreneurUnique__Img">
-                                        <?php echo $image;?>
+                                    <div class="sectionPhoto-content-EntrepreneurUnique__Img" style="background-image:url(<?php echo $image[0] ?>)">
                                     </div>
-                                    
                                     <span class="sectionPhoto-content-EntrepreneurUnique__Prenom"> <?php echo $nom;?> </span>
 
                                 </div>

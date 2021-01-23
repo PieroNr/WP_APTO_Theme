@@ -26,10 +26,9 @@
                     </div>
 
                     <?php 
-                    $imageExplication = wp_get_attachment_image( get_sub_field('about_section_explication_image')['ID'] ); ?>
+                    $imageExplication = wp_get_attachment_image_src( get_sub_field('about_section_explication_image')['ID'],'full');?>
 
-                    <div class="sectionExplication-content-Img">
-                        <?php echo ($imageExplication); ?>
+                    <div class="sectionExplication-content-Img" style="background-image:url(<?php echo $imageExplication[0] ?>)">
                     </div>
                     
                 <?php endwhile;

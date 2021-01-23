@@ -1,0 +1,48 @@
+.sectionPresentation{
+    margin-top: 50px;
+    &-content{
+        &-rubrique{
+            &__Img{
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 300px;
+                height: 300px;
+                &.-ImgLeft{
+                    background-position: top center;
+                }
+            }
+            &-text{
+                &__title{
+                    font-family: $policeCorps;
+                    font-size: rem(30);
+                    margin-top: 0;
+                }
+                &__text{
+                    font-family: $policeCorps;
+                    font-size: rem(20);
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: $large) {
+    .sectionPresentation{
+        margin-top: 50px;
+        &-content{
+            &-rubrique{
+                &-text{
+                    &.-textLeft{
+                        margin-left: 25px;
+                        margin-right: 25px;
+                    }
+                    &.-textRight{
+                        margin-left: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
