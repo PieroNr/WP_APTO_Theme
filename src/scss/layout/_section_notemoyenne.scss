@@ -1,0 +1,71 @@
+.avis{
+    background-color: $main_white;
+}
+
+.box{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+
+    
+    &__notes{
+        &__left{
+            border-right: 5px solid black;
+            font-family: $policeTitre;
+            margin-top: 8px;
+            &__text{
+                font-family: $policeTitre;
+                margin-bottom: 30px;
+            }
+        }
+        &__moybarre{
+            border : 1px solid black;
+            background: #d6d6d6;
+            height: 15px;
+            width: 10%;
+        }
+        &__barres{
+            vertical-align: bottom;
+            @for $i from 0 through 100{ //La boucle permet de créer une classe pour chaque pourcentage de la barre, allant de 0 à 100
+                &__barre-#{$i}{
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid black;
+                    border-right: 1px solid black;
+                    background: #d6d6d6;
+                    height: 30px;
+                    &:after{
+                        content: '';
+                        display: block;
+                        background: $main-orange;
+                        width: #{$i} + "%";
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__moyenne{
+        border: 1px solid black;
+        margin-left: 15px;
+        &__text{
+            font-family: $policeTitre;
+            color: $main-orange;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        &__p{
+            font-family: $proxima;
+            margin-left: 65px;
+            margin-right: 65px;
+            
+        }
+        &__rond{
+            background-color: $main-orange;
+            margin-right: 10px;
+            border-radius: 100%;
+            padding : 15px 15px 15px 15px;
+
+        }
+    }
+    
+}
