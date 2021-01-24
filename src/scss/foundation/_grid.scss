@@ -3,6 +3,10 @@ $maxColumns : 12;
 .container{
     margin : 0 auto;
 
+    &.-black{
+        background-color: $main_black;
+    }
+
 }
 
 .row{
@@ -10,6 +14,24 @@ $maxColumns : 12;
     flex-wrap: wrap;
     &.-vcenter{
         align-items: center;
+    }
+    &__center{
+        align-content: center;
+        text-align: center;
+        align-self:center;
+        justify-content: center;
+        align-items: center;
+
+    }
+    &__right{
+        align-content: right;
+        text-align: right;
+        align-self:right;
+    }
+    &__left{
+        align-content: left;
+        text-align: left;
+        align-self:left;
     }
 
 }
@@ -36,6 +58,27 @@ $maxColumns : 12;
     }
 }
 
+@include small-up(){
+    @for $i from 1 through $maxColumns{
+        .col-sm-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+        .col-sm-offset-#{$i}{
+            margin-left : calculate-width($i);
+        }
+        .col-sm-push-#{$i}{
+            position : relative;
+            left : calculate-width($i);
+        }
+        .col-sm-pull-#{$i}{
+            position : relative;
+            right : calculate-width($i);
+        }
+        
+    }
+}
+
 @include medium-up(){
     @for $i from 1 through $maxColumns{
         .col-md-#{$i}{
@@ -53,6 +96,7 @@ $maxColumns : 12;
             position : relative;
             right : calculate-width($i);
         }
+        
     }
 }
 
@@ -73,7 +117,93 @@ $maxColumns : 12;
             flex-basis : calculate-width($i);
             max-width: calculate-width($i);
         }
+        .col-xl-offset-#{$i}{
+            margin-left : calculate-width($i);
+        }
     }
+}
+
+@include x-small-only(){
+    .xs-space-v{
+        margin-bottom: 30px;
+    }
+    
+    .xs-space-h{
+        margin-right: 25px;
+    }
+
+    .xs-no-space-v{
+        margin-bottom: 0 !important;
+    }
+
+    .xs-no-space-h{
+        margin-right: 0 !important;
+    }
+
+    .d-xs-none {
+        display: none !important;
+      }
+    @for $i from 1 through $maxColumns{
+        .col-xs-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+        .col-xs-offset-#{$i}{
+            margin-left : calculate-width($i);
+        }
+    }
+}
+
+@include medium-down(){
+    .sm-space-v{
+        margin-bottom: 50px;
+    }
+    
+    .sm-space-h{
+        margin-right: 25px;
+    }
+}
+
+
+
+@include medium-down(){
+    @for $i from 1 through $maxColumns{
+    .col-smonly-offset-#{$i}{
+        margin-left : calculate-width($i);
+    }
+}
+}
+
+@include medium-down(){
+    .d-sm-none {
+        display: none !important;
+      }
+      
+    .xs-only{
+        display: inline !important;
+    }
+
+    .sm-no-space-v{
+        margin-bottom: 0 !important;
+    }
+
+    .sm-no-space-h{
+        margin-right: 0 !important;
+    }
+}
+
+@include medium-up(){
+    .d-md-none {
+        display: none !important;
+      }
+}
+
+.space-v{
+    margin-bottom: 50px;
+}
+
+.space-h{
+    margin-right: 25px;
 }
 
 
