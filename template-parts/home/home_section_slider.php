@@ -20,7 +20,7 @@
                                     <p class="slideOne-content-slide-titleDesc__desc"><?php echo $options_slider_description; ?></p>
                                 </div>
                                 <div class="slideOne-content-slide-image">
-                                    <?php echo wp_get_attachment_image( $options_slider_image['ID']); ?>
+                                    <?php echo wp_get_attachment_image( $options_slider_image['ID'],'full'); ?>
                                 </div>
                             </div>
                         <?php

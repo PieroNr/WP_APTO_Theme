@@ -26,13 +26,14 @@
                         <h2 class="modes-content-titleDesc__title"><?php echo $modes_title; ?></h2>
                         <p class="modes-content-titleDesc__description"><?php echo $modes_description; ?></p>
                     </div>
+                    <div class="conteneur-mode">
 
                     <div class="modes-content-detail">
                         <?php 
 
                             for ($i=0; $i < count($tab_modes); $i++) { ?>
                                 <div class="modes-content-detail-one">
-                                    <div class="modes-content-detail-one-picto">
+                                    <div class="modes-content-detail-one-picto" >
                                         <?php echo $tab_modes[$i][0]; ?>
                                     </div>
                                     <p class="modes-content-detail-one__name"><?php echo $tab_modes[$i][1]; ?></p>
@@ -42,6 +43,7 @@
                             };
 
                          ?>
+                         </div>
                     </div>
 
                 </div>
