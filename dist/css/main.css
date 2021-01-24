@@ -1278,21 +1278,88 @@ img {
 .box {
   background-color: #FFFFFF;
   border-radius: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.box__avis__left {
+  padding: 10px 0px 10px 25px;
+}
+.box__avis__right {
+  padding: 10px 25px 10px 0px;
+}
+.box__avis__auteur {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  color: #222222;
+}
+.box__avis__date {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  color: #727272;
+}
+.box__avis__titre {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: #222222;
+}
+.box__avis__contenu {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 25px;
+  color: #222222;
+}
+.box__avis-tri__text {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+}
+.box__avis-tri__button {
+  background: #FF6600;
+  color: #222222;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 21px;
+  border-radius: 20px;
+  padding: 5px 20px 5px 20px;
 }
 .box__notes__left {
   border-right: 5px solid black;
   font-family: "Righteous";
-  margin-top: 8px;
+  margin-top: 7px;
 }
 .box__notes__left__text {
   font-family: "Righteous";
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
-.box__notes__moybarre {
-  border: 1px solid black;
+.box__notes__moybarres__text {
+  font-family: "Righteous";
+}
+.box__notes__moybarres.-space {
+  margin-bottom: 15px;
+}
+.box__notes__moybarres__barre {
   background: #d6d6d6;
   height: 15px;
   width: 10%;
+}
+.box__notes__moybarres__barre.-first {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.box__notes__moybarres__barre.-last {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.box__notes__moybarres__barre.-spaceh {
+  margin-right: 5px;
+}
+.box__notes__moybarres__barre.-active {
+  background: #FF6600;
 }
 .box__notes__barres {
   vertical-align: bottom;
@@ -2713,7 +2780,6 @@ img {
 }
 .box__moyenne {
   border: 1px solid black;
-  margin-left: 15px;
 }
 .box__moyenne__text {
   font-family: "Righteous";
