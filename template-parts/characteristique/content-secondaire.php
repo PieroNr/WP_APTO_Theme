@@ -14,9 +14,9 @@
                     $titreOptionCaracSecond = $caracSecond[$i]['charac_second_detail_options_title'];
                     $valeurOptionCaracSecond = $caracSecond[$i]['charac_second_detail_options_value']; ?>
 
-                    <div class="sectionSecondaire-content-featuresUnique">
-                        <span class="sectionSecondaire-content-featuresUnique__title"> <?php echo $titreOptionCaracSecond; ?> </span>
-                        <span class="sectionSecondaire-content-featuresUnique__valeur"> <?php echo $valeurOptionCaracSecond; ?> </span>
+                    <div class="sectionSecondaire-content-featuresUnique row">
+                        <span class="sectionSecondaire-content-featuresUnique__title col-6"> <?php echo $titreOptionCaracSecond; ?> </span>
+                        <span class="sectionSecondaire-content-featuresUnique__valeur col-6"> <?php echo $valeurOptionCaracSecond; ?> </span>
                     </div>
 
                 <?php } ?>

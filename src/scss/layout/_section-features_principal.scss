@@ -1,0 +1,72 @@
+.sectionPrincipal{
+    justify-content: center;
+    display: flex;
+    &-content{
+        display: flex;
+        flex-wrap: wrap;
+        width: 85%;
+        justify-content: center;
+        &-unique{
+            background-color: white;
+            color: $main_black;
+            text-align: center;
+            margin: 10px;
+            width: 400px;
+            height: 250px;
+            padding-top: 20px;
+            font-family: $policeCorps;
+            &__title{
+                font-size: rem(25);
+                margin-bottom: -75px;
+                height: fit-content;
+            }
+            
+        }
+        &-uniqueOption{
+            &__text{
+                font-weight: bold;
+                font-size: rem(30);
+                width: 90%;
+                margin: auto;
+            }
+        }
+
+        
+    }
+}
+
+@media screen and (max-width: $x-large) {
+    .sectionPrincipal{
+        &-content{
+            width: 95%;
+        }
+    }
+}
+
+@media screen and (max-width: $large) {
+    .sectionPrincipal{
+        &-content{
+            width: 80%;
+            &-unique{
+                background-color: $main_white;
+                flex-direction: row;
+                width: 100%;
+                margin: 0;
+                height: 200px;
+                padding: 0;
+                &__title{
+                    font-size: rem(20);
+                    margin: auto;
+                }
+            }
+            &-uniqueOption{
+                margin: auto;
+                &__text{
+                    font-size: rem(20);
+                    margin: 0;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
