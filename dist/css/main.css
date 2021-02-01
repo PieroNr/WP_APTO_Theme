@@ -1,3 +1,4 @@
+@charset "UTF-8";
 img {
   max-width: 100%;
 }
@@ -2808,6 +2809,272 @@ img {
   padding: 15px 15px 15px 15px;
 }
 
+.modal {
+  /* Base for label styling */
+  /* checkbox aspect */
+  /* checked mark aspect */
+  /* checked mark aspect changes */
+  /* Disabled checkbox */
+  /* Accessibility */
+}
+.modal__title {
+  font-family: "Righteous";
+  color: #222222;
+  font-size: 60px;
+}
+.modal_social {
+  margin-bottom: 50px;
+}
+.modal_social__facebook {
+  cursor: pointer;
+  color: #F4F4F4;
+  border-radius: 100%;
+  background: #2D88FF;
+  padding: 13px 13px 13px 18px;
+  margin-right: 15px;
+  transition: box-shadow 0.4s cubic-bezier(0.17, 0.67, 1, 1.23), background-color 0.4s cubic-bezier(0.17, 0.67, 1, 1.23);
+}
+.modal_social__facebook:hover {
+  box-shadow: 5px 3px 3px #2c2c2c;
+  background: #3d91ff;
+}
+.modal_social__google {
+  cursor: pointer;
+  color: #F4F4F4;
+  border-radius: 100%;
+  background: #EA4335;
+  padding: 13px 15px 13px 15px;
+  transition: box-shadow 0.4s cubic-bezier(0.17, 0.67, 1, 1.23), background-color 0.4s cubic-bezier(0.17, 0.67, 1, 1.23);
+}
+.modal_social__google:hover {
+  box-shadow: 5px 3px 3px #2c2c2c;
+  background: #ec594c;
+}
+.modal__group {
+  align-content: center;
+  text-align: center;
+}
+.modal__textsm {
+  font-family: "Proxima Nova", sans-serif;
+  color: #6977BB;
+  text-decoration: none;
+}
+.modal__textsm:hover {
+  transition-duration: 0.4s;
+  color: #828ecc;
+}
+.modal__input {
+  border: 2px solid #222222;
+  border-radius: 4px;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  margin-bottom: 25px;
+  font-family: "Proxima Nova", sans-serif;
+}
+.modal__input:focus {
+  transition-duration: 0.4s;
+  border: 2px solid #FF6600;
+  border-radius: 4px;
+  outline: none;
+  outline-width: 0;
+}
+.modal__check {
+  font-family: "Proxima Nova", sans-serif !important;
+}
+.modal [type=checkbox]:not(:checked),
+.modal [type=checkbox]:checked {
+  position: absolute;
+  left: 0;
+  opacity: 0.01;
+}
+.modal [type=checkbox]:not(:checked) + label,
+.modal [type=checkbox]:checked + label {
+  position: relative;
+  padding-left: 2.3em;
+  font-size: 1.05em;
+  line-height: 1.7;
+  cursor: pointer;
+}
+.modal [type=checkbox]:not(:checked) + label:before,
+.modal [type=checkbox]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid #aaa;
+  background: #FFF;
+  border-radius: 0.2em;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 rgba(238, 179, 53, 0.2);
+  transition: all 0.275s;
+}
+.modal [type=checkbox]:not(:checked) + label:after,
+.modal [type=checkbox]:checked + label:after {
+  content: "✓";
+  position: absolute;
+  top: 0.525em;
+  left: 0.18em;
+  font-size: 1.375em;
+  color: #FF6600;
+  line-height: 0;
+  transition: all 0.2s;
+}
+.modal [type=checkbox]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0) rotate(45deg);
+}
+.modal [type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+.modal [type=checkbox]:disabled:not(:checked) + label:before,
+.modal [type=checkbox]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #e9e9e9;
+}
+.modal [type=checkbox]:disabled:checked + label:after {
+  color: #777;
+}
+.modal [type=checkbox]:disabled + label {
+  color: #aaa;
+}
+.modal [type=checkbox]:checked:focus + label:before,
+.modal [type=checkbox]:not(:checked):focus + label:before {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 6px rgba(238, 179, 53, 0.2);
+}
+.modal__button {
+  outline: none;
+  background: #FF6600;
+  color: #222222;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 21px;
+  border-radius: 20px;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  width: 100%;
+  transition: background 0.4s cubic-bezier(0.17, 0.67, 1, 1.23);
+}
+.modal__button:hover {
+  background: #EF8742;
+  cursor: pointer;
+}
+.modal__textsm {
+  font-family: "Proxima Nova", sans-serif;
+  color: #6977BB;
+  text-decoration: none;
+}
+.modal__textsm:hover {
+  transition-duration: 0.4s;
+  color: #828ecc;
+}
+
+.socialicon-dot {
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  font-size: 25px;
+}
+
+.sociallistdot {
+  display: inline-block;
+  background-color: #474747;
+  margin: 15px;
+  border-radius: 50%;
+  transition: box-shadow 0.4s cubic-bezier(0.17, 0.67, 1, 1.23), background-color 0.4s cubic-bezier(0.17, 0.67, 1, 1.23);
+}
+
+.sociallistdot:hover {
+  box-shadow: 5px 3px 3px #2c2c2c;
+  background-color: #6e6e6e;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+  color: #222222;
+  float: right;
+  font-size: 70px;
+  transition: transform 0.4s cubic-bezier(0.17, 0.67, 1, 1.23);
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+  text-align: center;
+  font-family: "Righteous";
+  color: #222222;
+  padding: 2px 16px;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  padding-bottom: 15px;
+  border: 1px solid #888;
+  width: 500px;
+  min-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  top: 100px;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 100px;
+    opacity: 1;
+  }
+}
 html, body {
   margin: 0;
   padding: 0;

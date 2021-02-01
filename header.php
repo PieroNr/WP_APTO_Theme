@@ -12,6 +12,7 @@
 
     <?php /** @link https://developer.wordpress.org/reference/functions/wp_head/ */ ?>
     <?php wp_head(); ?>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 

@@ -465,9 +465,164 @@
 
         
     </div>
+<!-- Debut modal  -->
+
+<!-- Trigger/Open The Modal -->
+<button id="btnLogin">Se connecter</button>
+<button id="btnRegister">S'inscrire</button>
+
+<!-- The Modal -->
+<div id="modalLogin" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close closeLogin">&times;</span>
+            <h1 class="modal__title">Connexion</h1>
+        </div>
+        <div class="modal-body row__center">
+            <div class="modal_social">
+                <a class="modal_social__facebook title -api"> <i class="fa fa-facebook"></i> </a>
+                <a class="modal_social__google title -api" > <i class="fa fa-google"></i> </a> 
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <input class="modal__input" type="text" placeholder="Adresse Mail">
+                </div>       
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <input class="modal__input" type="text" placeholder="Mot de passe">
+                </div>
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <div class="row__left">
+                    <input class="modal__checkbox" type="checkbox" id="stayco" name="stayco" checked>
+                    <label class="modal__check" for="stayco">Rester connecté</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row row__center" style="margin-top : 20px;">
+                <div class="col-8">
+                <button href="#" class="modal__button" style="margin-top: 20px;">Connexion</button>
+                </div>
+            </div>
+            <div class="row row__center" style="margin-top : 20px;">
+                <div class="col-10">
+                    <a href="#" id="switchToRegister" class="modal__textsm">Si vous ne possédez pas de compte : Inscription</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="modalRegister" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close closeRegister">&times;</span>
+            <h1 class="modal__title">S'inscrire</h1>
+        </div>
+        <div class="modal-body row__center">
+            <div class="modal_social">
+                <a class="modal_social__facebook title -api"> <i class="fa fa-facebook"></i> </a>
+                <a class="modal_social__google title -api" > <i class="fa fa-google"></i> </a> 
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <input class="modal__input" type="text" placeholder="Prénom">
+                </div>       
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <input class="modal__input" type="text" placeholder="Nom">
+                </div>
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <input class="modal__input" type="text" placeholder="Adresse Mail">
+                </div>       
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <input class="modal__input" type="text" placeholder="Mot de passe">
+                </div>       
+            </div>
+            <div class="row row__center">
+                <div class="col-8">
+                    <input class="modal__input" type="text" placeholder="Confirmer mot de passe">
+                </div>       
+            </div>
+            <div class="row row__center" style="margin-top : 20px;">
+                <div class="col-8">
+                <button href="#" class="modal__button" style="margin-top: 20px;">Inscription</button>
+                </div>
+            </div>
+            
+            <div class="row row__center" style="margin-top : 20px;">
+                <div class="col-10">
+                    <a href="#" id="switchToLogin" class="modal__textsm">Si vous avez déjà un compte : Connexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin modal -->
     </div>
 
+<script>
 
+var modalLogin = document.getElementById("modalLogin");
+var modalRegister = document.getElementById("modalRegister");
+
+
+var btnLogin = document.getElementById("btnLogin");
+var btnRegister = document.getElementById("btnRegister");
+
+
+var spanLogin = document.getElementsByClassName("closeLogin")[0];
+var spanRegister = document.getElementsByClassName("closeRegister")[0];
+
+var switchRegister = document.getElementById("switchToRegister");
+var switchLogin = document.getElementById("switchToLogin");
+
+
+btnLogin.onclick = function() {
+    modalLogin.style.display = "block";
+}
+
+btnRegister.onclick = function() {
+    modalRegister.style.display = "block";
+}
+
+switchRegister.onclick = function() {
+    modalLogin.style.display = "none";
+    modalRegister.style.display = "block";
+}
+switchLogin.onclick = function() {
+    modalLogin.style.display = "block";
+    modalRegister.style.display = "none";
+}
+
+
+spanLogin.onclick = function() {
+    modalLogin.style.display = "none";
+}
+spanRegister.onclick = function() {
+    modalRegister.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modalLogin) {
+    modalLogin.style.display = "none";
+  }
+  if (event.target == modalRegister) {
+    modalRegister.style.display = "none";
+  }
+}
+</script>
 
     <?php
 
