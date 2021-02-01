@@ -55,6 +55,7 @@
         }
 
         &__button{
+            outline:none;
             background: $main-orange;
             color: $main_black;
             font-family: $proxima;
@@ -62,6 +63,14 @@
             font-size: 21px;
             border-radius: 20px;
             padding: 5px 20px 5px 20px;
+            transition: background 0.4s cubic-bezier(.17,.67,1,1.23);
+            &:hover{
+                background: $orange_hover;
+                cursor: pointer;
+            }
+            &.-active{
+                border : 3px dashed#222222;
+            }
         }
     }
 

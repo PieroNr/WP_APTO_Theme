@@ -1319,6 +1319,7 @@ img {
   font-size: 35px;
 }
 .box__avis-tri__button {
+  outline: none;
   background: #FF6600;
   color: #222222;
   font-family: "Proxima Nova", sans-serif;
@@ -1326,6 +1327,14 @@ img {
   font-size: 21px;
   border-radius: 20px;
   padding: 5px 20px 5px 20px;
+  transition: background 0.4s cubic-bezier(0.17, 0.67, 1, 1.23);
+}
+.box__avis-tri__button:hover {
+  background: #EF8742;
+  cursor: pointer;
+}
+.box__avis-tri__button.-active {
+  border: 3px dashed #222222;
 }
 .box__notes__left {
   border-right: 5px solid black;

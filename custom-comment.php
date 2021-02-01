@@ -22,7 +22,9 @@
     $args = array(  
         'post_type' => 'avis',
         'posts_per_page' => -1,  
-        'order' => 'ASC', 
+        'meta_key'	=> 'avis_datepost',
+	    'orderby'	=> 'meta_value',
+	    'order'		=> 'DESC'
     );
 
     $avis = new WP_Query( $args );
@@ -99,9 +101,9 @@
     ?>
 
 
-    <div class="container" >
+    <div class="container" style="margin-left:25px; margin-right:25px;">
         <div class="row row__center box">
-            <div class="col-4">
+            <div class="col-md-4 col-sm-12 sm-space-v">
                 <div class="row">
                 <div class="col-2 box__notes__left">
                     <p class="box__notes__left__text">5/5</p>
@@ -119,7 +121,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-4 col-sm-8 sm-space-v">
                 <div class="row row__center">
                     <div class="box__moyenne">
                         <div class="box__moyenne__text"> <?php echo $moyenneFinale; ?> </div>
@@ -240,7 +242,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4 col-sm-12">
             <span class="box__notes__moybarres__text">Confort</span>              
                 <div class="row row__center box__notes__moybarres -space">
                     <?php 
@@ -279,20 +281,65 @@
                 
             </div>
         </div>
+        <?php $postTest = false;
+            if(!isset($_POST['recent']) && !isset($_POST['malnote']) && !isset($_POST['biennote'])){
+                $postTest = true;
+            }
+        ?>
+        <form method="post"> 
         <div class="row box row__center">
-            <div class="col-2">
+            <div class="col-12">
                 <div class="box__avis-tri__text">Trier les avis</div>
             </div>
-            <div class="col-2 space-h">
-                <div class="box__avis-tri__button">Les plus récents</div>
+            <div class="col-md-2 col-sm-12 space-h sm-no-space-h sm-space-v">
+                <button type="submit" name="recent" value="recent" class="box__avis-tri__button <?php if(isset($_POST['recent']) || $postTest) { echo " -active"; } ?>">Les plus récents</button>
             </div>
-            <div class="col-2 space-h">
-                <div class="box__avis-tri__button">Les moins bien notés</div>
+            <div class="col-md-2 col-sm-12 space-h sm-no-space-h sm-space-v">
+                <button type="submit" name="malnote" value="malnote" class="box__avis-tri__button <?php if(isset($_POST['malnote'])) { echo " -active"; } ?>">Les moins bien notés</button>
             </div>
-            <div class="col-2">
-                <div class="box__avis-tri__button">Les mieux notés</div>
+            <div class="col-md-2 col-sm-12">
+                <button type="submit" name="biennote" value="biennote" class="box__avis-tri__button <?php if(isset($_POST['biennote'])) { echo " -active"; } ?>">Les mieux notés</button>
             </div>    
         </div>
+        </form>
+
+        <?php
+      
+        if(isset($_POST['recent'])) { 
+            $args = array(  
+                'post_type' => 'avis',
+                'posts_per_page' => -1,  
+                'meta_key'	=> 'avis_datepost',
+                'orderby'	=> 'meta_value',
+                'order'		=> 'DESC'
+            );
+        
+            $avis = new WP_Query( $args ); 
+        } 
+        if(isset($_POST['malnote'])) { 
+            $args = array(  
+                'post_type' => 'avis',
+                'posts_per_page' => -1,  
+                'meta_key'	=> 'avis_note',
+                'orderby'	=> 'meta_value',
+                'order'		=> 'ASC'
+            );
+        
+            $avis = new WP_Query( $args ); 
+        }
+        
+        if(isset($_POST['biennote'])) { 
+            $args = array(  
+                'post_type' => 'avis',
+                'posts_per_page' => -1,  
+                'meta_key'	=> 'avis_note',
+                'orderby'	=> 'meta_value',
+                'order'		=> 'DESC'
+            );
+        
+            $avis = new WP_Query( $args ); 
+        }
+    ?> 
 
         <?php 
         for ($j = 0; $j < count($avis->posts); $j++) {
