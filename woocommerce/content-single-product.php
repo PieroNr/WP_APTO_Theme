@@ -1,9 +1,8 @@
 
 
 <?php 
-    $prefix                = get_field("prefix-img");
     /** @link https://developer.wordpress.org/reference/functions/wp_get_upload_dir/ */
-    $upload_dir            = wp_get_upload_dir()["baseurl"] . "/" . $prefix . "-"  ;
+    $upload_dir            = wp_get_upload_dir()["baseurl"] . "/"  ;
     /** @link https://developer.wordpress.org/reference/functions/get_the_id/  */
     $idProduct             = get_the_ID();
     /** @link https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_get_product */
@@ -21,67 +20,43 @@
 ?>
 
 
-<div class="row -vcenter">
-    <div class="col-12 col-md-6 col-md-push-3">
-        <div class="watch">
-            <?php if ($default_attributes[$attribute_dial_color]) : ?>
-                <img class="watch__dial" data-source="<?php echo $upload_dir ?>cadran-{color}.png" src="<?php echo $upload_dir ?>cadran-<?php echo $default_attributes[$attribute_dial_color]?>.png" alt="">
-            <?php else:  ?>
-                <img class="watch__dial" data-source="<?php echo $upload_dir ?>cadran-{color}.png" src="<?php echo $upload_dir ?>cadran-noir.png" alt="">
-            <?php endif; ?>
+<div class="row perso">
+    <div class="col-12 col-md-6" id="img-product">
+        <div class="watch" id="imageMontre">
             <?php if ($default_attributes[$attribute_strap_color]) : ?>
                 <img class="watch__strap" data-source="<?php echo $upload_dir ?>bracelet-{color}.png" src="<?php echo $upload_dir ?>bracelet-<?php echo $default_attributes[$attribute_strap_color]?>.png" alt="">
             <?php else:  ?>
                 <img class="watch__strap" data-source="<?php echo $upload_dir ?>bracelet-{color}.png" src="<?php echo $upload_dir ?>bracelet-orange.png" alt="">
             <?php endif; ?>
         </div>
+        <div class="presMontre">
+            <img class="presMontre__image -gauche" src="<?php echo get_template_directory_uri()?>/dist/images/1.png" onclick="zoomImage(1)" alt="" width="30%">
+            <img class="presMontre__image" src="<?php echo get_template_directory_uri()?>/dist/images/2.png" onclick="zoomImage(2)" alt="" width="30%">
+            <img class="presMontre__image -droite" src="<?php echo get_template_directory_uri()?>/dist/images/3.png" onclick="zoomImage(3)" alt="" width="30%">
+        </div>
     </div>
-    <div class="col-12 col-md-3 col-md-pull-6">
-        <h1 class="title"><?php the_title(); ?></h1>
-        <p class="subtitle">Prix : <b><span id="product-final-price"><?php echo $price; ?>€</span></b></p>
-        <?php if($strap_colors) : ?>
-            <h2 class="subtitle">Choisir la couleur du Bracelet</h2>
-            <ul class="c-colorDots">
-                <?php foreach($strap_colors as $strap_color) : ?>
-                    <?php
-                        $isActive = ($default_attributes[$attribute_strap_color] == $strap_color) ? "-active" : "";
-                        $classname = strtolower($strap_color) 
-                    ?>
-                    <li data-attribute="<?php echo $attribute_strap_color; ?>" data-value="<?php echo $strap_color; ?>" class="c-colorDots__item filterItem -<?php echo $classname; ?>  <?php echo $isActive; ?>"></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-    </div>
-    <div class="col-12 col-md-3"> 
-       
-        <?php if($dial_colors) : ?>
-            <h2 class="subtitle">Choisir la couleur du cadran</h2>
-            <ul class="c-colorDots">
-                <?php foreach($dial_colors as $dial_color) : ?>
-                    <?php
-                        $isActive = ($default_attributes[$attribute_dial_color] == $dial_color) ? "-active" : "";
-                        $classname = strtolower($dial_color) 
-                    ?>
-                    <li data-attribute="<?php echo $attribute_dial_color; ?>" data-value="<?php echo $dial_color; ?>" class="c-colorDots__item filterItem -<?php echo $classname; ?>  <?php echo $isActive; ?>"></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-       
-        <?php if($dial_sizes) : ?>
-            <h2 class="subtitle">Choisir la Taille du Cadran</h2>
-            <ul class="c-colorDots">
-                <?php foreach($dial_sizes as $dial_size) : ?>
-                    <?php
-                        $isActive = ($default_attributes[$attribute_dial_size] == $dial_size) ? "-active" : "";
-                    ?>
-                    <li data-attribute="<?php echo $attribute_dial_size; ?>" data-value="<?php echo $dial_size; ?>" class="c-dots__item filterItem <?php echo $isActive; ?>"> <?php echo $dial_size ?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
 
-
-        <div class="button" id="add-product-to-cart">Ajouter au panier</div>
+    <div class="col-12 col-md-5 " id="informations-product">
+        <div class="personnalisation-product">
+            <h1 class="title"><?php the_title(); ?></h1>
+            <p class="subtitle"><b><span id="product-final-price"><?php echo $price; ?>€</span></b></p>
+            <?php if($strap_colors) : ?>
+                <h2 class="subtitle">Choisir la couleur du Bracelet</h2>
+                <ul class="c-colorDots">
+                    <?php foreach($strap_colors as $strap_color) : ?>
+                        <?php
+                            $isActive = ($default_attributes[$attribute_strap_color] == $strap_color) ? "-active" : "";
+                            $classname = strtolower($strap_color) 
+                        ?>
+                        <li data-attribute="<?php echo $attribute_strap_color; ?>" data-value="<?php echo $strap_color; ?>" class="c-colorDots__item filterItem -<?php echo $classname; ?>  <?php echo $isActive; ?>"></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <div class="button" id="add-product-to-cart">Ajouter au panier</div>
+        </div>
+        
     </div>
+        
 </div>
 
 
