@@ -1,0 +1,43 @@
+.sectionExplication{
+    &-content{
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        &__title{
+            font-family: $policeCorps;
+            font-size: rem(30);
+        }
+        &-paragraphe{
+            &__text{
+                font-family: $policeCorps;
+                font-size: rem(20);
+            }
+        }
+        &-Img{
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 400px;
+            height: 150px;
+            margin: auto;
+        }
+    }
+}
+
+@media screen and (max-width: $large) {
+    .sectionExplication{
+        &-content{
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $small) {
+    .sectionExplication{
+        &-content{
+            &-Img{
+                display: none;
+            }
+        }
+    }
+}

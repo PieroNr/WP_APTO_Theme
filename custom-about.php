@@ -9,8 +9,11 @@
 
     /** @link https://developer.wordpress.org/themes/basics/the-loop/  */
     if( have_posts() ): 
-        while( have_posts() ) : the_post();
+        while( have_posts() ) : the_post(); ?>
 
+        <h1 class="about__title"> <?php the_title(); ?></h1>
+
+        <?php 
         get_template_part( 'template-parts/about/section_photo' );
         get_template_part( 'template-parts/about/section_presentation' );
         get_template_part( 'template-parts/about/section_explication' );

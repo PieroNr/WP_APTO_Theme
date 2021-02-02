@@ -1,53 +1,56 @@
-<?php 
-    $images = array();
-    $paragraphesPhoto = array();
+<div class="sectionPhoto">
+    <div class="sectionPhoto-content">
+        <?php 
+            if( have_rows('about_section_photo')):
+                while( have_rows('about_section_photo') ): the_row(); ?>
 
-    if( have_rows('about_section_photo')):
-        while( have_rows('about_section_photo') ): the_row();
+                    <div class="sectionPhoto-content-Entrepreneur row d-xs-none">
 
-            if( have_rows('about_section_photo_image')):
-                while( have_rows('about_section_photo_image') ): the_row();
+                        <?php if( have_rows('about_section_photo_image')):
+                            while( have_rows('about_section_photo_image') ): the_row();
 
-                    $image = wp_get_attachment_image( get_sub_field('about_section_photo_image_file')['ID'] );
+                                $image = wp_get_attachment_image_src( get_sub_field('about_section_photo_image_file')['ID'],'full');
 
-                    $nom = get_sub_field("about_section_photo_image_title");
+                                $nom = get_sub_field("about_section_photo_image_title");?>
 
-                    $temp = [$image, $nom];
-                    array_push($images, $temp);
-                    
-                endwhile;
-            endif;
+                                <div class="sectionPhoto-content-EntrepreneurUnique col-4">
 
-            if( have_rows('about_section_photo_paragraphe')):
-                while( have_rows('about_section_photo_paragraphe') ): the_row();
+                                    <div class="sectionPhoto-content-EntrepreneurUnique__Img" style="background-image:url(<?php echo $image[0] ?>)">
+                                    </div>
+                                    <span class="sectionPhoto-content-EntrepreneurUnique__Prenom"> <?php echo $nom;?> </span>
 
-                    $paragraphe = get_sub_field("about_section_photo_paragraphe_texte");
+                                </div>
+                            <?php endwhile;
+                        endif; ?>
 
-                    $temp = [$paragraphe];
-                    array_push($paragraphesPhoto, $temp);
-                    
-                endwhile;
-            endif;
+                    </div>
 
-            $slogan = get_sub_field("about_section_photo_slogan");
+                    <div class="sectionPhoto-content-paragraphe">
 
+                        <?php if( have_rows('about_section_photo_paragraphe')):
+                            while( have_rows('about_section_photo_paragraphe') ): the_row(); 
+
+                                $paragraphe = get_sub_field("about_section_photo_paragraphe_texte"); ?>
+
+                                <div class="sectionPhoto-content-paragrapheUnique">
+                                    <p class="sectionPhoto-content-paragrapheUnique__text"> <?php echo $paragraphe; ?> </p>
+                                </div>
+
+                            <?php endwhile;
+                        endif;?>
+
+                    </div>
+
+                    <div class="sectionPhoto-content-slogan">
+
+                        <?php $slogan = get_sub_field("about_section_photo_slogan"); ?>
+
+                        <span class="sectionPhoto-content-slogan__text"> <?php echo ($slogan); ?> </span>
+                    </div>
+
+                    <?php endwhile;
+            endif;  
             
-
-        endwhile;
-    endif; 
-
-    for ($i=0; $i < count($images); $i++) { 
-        for ($j=0; $j < count($images[$i]); $j++) { 
-            echo $images[$i][$j];
-        }
-    };  
-    echo("<br>");
-    for ($i=0; $i < count($paragraphesPhoto); $i++) { 
-        for ($j=0; $j < count($paragraphesPhoto[$i]); $j++) { 
-            echo $paragraphesPhoto[$i][$j];
-        }
-    }; 
-    echo("<br>");
-    echo ($slogan);
-    echo("<br>");
-?>
+        ?>
+    </div>
+</div>
