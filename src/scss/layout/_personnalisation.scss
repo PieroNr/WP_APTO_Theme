@@ -9,3 +9,79 @@
 #step-1{
     display : block;
 }
+
+#informations-product{
+    background-color: white;
+}
+
+.personnalisation-product{
+    padding: 30px 60px;
+}
+
+.title{
+    font-family: $proxima;
+    font-weight: bold;
+    font-size: rem(40);
+    margin-bottom: 50px;
+    line-height: initial;
+}
+
+.subtitle{
+    margin-bottom: 50px;
+    line-height: initial;
+}
+
+.subtitle-couleu{
+    font-family: $proxima;
+    font-size: rem(25);
+    margin-bottom: 30px;
+}
+
+.watch{
+    padding :0;
+    text-align: center;
+    &__strap{
+        width: 80%;
+        
+    }
+}
+
+.presMontre{
+    margin-top: 1em;
+    transition: transform .2s;
+    &__image{
+        margin: 5px;
+        position: relative;
+        &.-select{
+          transition: transform .2s;
+          transform: scale(3.5);
+          top: -20em;
+          &.-gauche{
+              left: 28%;
+          }
+          &.-droite{
+              right: 30%;
+          }
+
+        }
+    }
+}
+
+.perso{
+    background-color: $main_white;
+}
+
+@media screen and (max-width: $large) {
+    .personnalisation-product{
+        padding: 10px 20px;
+    }
+    #img-product, #informations-product{
+        height: auto !important;
+    }
+    #informations-product{
+        margin-bottom: 50px;
+    }
+    .presMontre{
+        display: none;
+    }
+}

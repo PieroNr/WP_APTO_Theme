@@ -1,18 +1,22 @@
-$colors : ("orange", rgb(235, 141, 34)), ("bleu", rgb(19, 19, 97))
-, ("marron", rgb(78, 15, 15)), ("green", rgb(18, 194, 32)), ("violet", rgb(109, 18, 194)),  ("noir", #000), ("jaune", yellow);
+$colors : ("noir", #000), ("rouge", #DE6464), ("rose", #ECA2CF), ("violet", #B44DB4), 
+("bleu", #584BB4), ("bleuclair", #94CFE2), ("vert", #9FD8B2), ("vertclair", #DCE8BA), ("blanc", #FFFFFF);
 
 
 .c-colorDots{  
     padding : 0;
+    margin-bottom: 50px;
     &__item{
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         border-radius: 100%;
         background : gray;
         display : inline-block;
         margin : 0 0.5rem;
         position : relative;
         cursor: pointer;
+        border: 2px solid black;
+        margin-bottom: 10px;
+        
         @each $color in $colors {
             &.-#{nth($color, 1)}{
                 background : #{nth($color, 2)}
@@ -22,12 +26,12 @@ $colors : ("orange", rgb(235, 141, 34)), ("bleu", rgb(19, 19, 97))
             &:before{
                 content : "";
                 position : absolute;
-                height : 24px;
-                width: 24px;
-                left: -4px;
-                top : -4px;
+                height : 34px;
+                width: 34px;
+                left: -7px;
+                top : -7px;
                 border-radius: 100%;
-                border : 2px solid black;
+                border : 3px solid black;
             }
 
         }
@@ -48,7 +52,7 @@ $colors : ("orange", rgb(235, 141, 34)), ("bleu", rgb(19, 19, 97))
         border : 2px solid #ddd;
         display : inline-block;
         cursor: pointer;
-        font-family: $text-font-family;
+        font-family: $proxima;
         &.-active{
             border : 2px solid black;
 

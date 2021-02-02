@@ -1,5 +1,6 @@
 // Foundations
 @import "./foundation/variables";
+@import "./foundation/variables_piero";
 @import "./foundation/functions";
 @import "./foundation/mixins";
 @import "./foundation/normalize";
@@ -8,10 +9,10 @@
 
 // Elements
 @import "./elements/buttons";
-@import "./elements/typography";
 @import "./elements/input";
 @import "./elements/burger";
-@import "./elements/watch";
+@import "./elements/header";
+@import "./elements/footer";
 
 // Components
 //@import "./components/nav-css-animation";
@@ -21,12 +22,15 @@
 @import "./components/form"; 
 
 //layout
-@import "./layout/section";
+@import "./layout/woocommerce";
 @import "./layout/personnalisation";
 
-
 //Pages
-@import "./pages/sense-fonctions";
+@import "./home";
+@import "./about";
+@import "./features";
+@import "./comment";
+@import "./modal.scss";
  
 
 html,body{

@@ -1,0 +1,160 @@
+.avis{
+    background-color: $main_white;
+}
+
+.box{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-left: 25px; 
+    margin-right: 25px;
+    margin-bottom: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &__avis{
+        &__left{
+            padding: 10px 0px 10px 25px;
+        }
+        &__right{
+            padding: 10px 25px 10px 0px;
+        }
+        &__auteur{
+            font-family: $proxima;
+            font-weight: bold;
+            font-size: 35px;
+            color: $main_black;
+        }
+        &__note{
+
+        }
+        &__date{
+            font-family: $proxima;
+            font-weight: bold;
+            font-size: 17px;
+            color: #727272;
+        }
+        &__titre{
+            font-family: $proxima;
+            font-weight: bold;
+            font-size: 28px;
+            color: $main_black;
+        }
+        &__contenu{
+            font-family: $proxima;
+            font-size: 25px;
+            color: $main_black;
+
+        }
+    }
+
+    &__avis-tri{
+        &__text{
+            font-family: $proxima;
+            font-weight: bold;
+            font-size: 35px;
+        }
+
+        &__button{
+            outline:none;
+            background: $main-orange;
+            color: $main_black;
+            font-family: $proxima;
+            font-weight: bold;
+            font-size: 21px;
+            border-radius: 20px;
+            padding: 5px 20px 5px 20px;
+            transition: background 0.4s cubic-bezier(.17,.67,1,1.23);
+            &:hover{
+                background: $orange_hover;
+                cursor: pointer;
+            }
+            &.-active{
+                border : 3px dashed#222222;
+            }
+        }
+    }
+
+    
+    &__notes{
+        &__left{
+            border-right: 5px solid black;
+            font-family: $policeTitre;
+            margin-top: 7px;
+            &__text{
+                font-family: $policeTitre;
+                margin-bottom: 25px;
+            }
+        }
+        &__moybarres{
+            &__text{
+                font-family: $policeTitre;
+            }
+            &.-space{
+                margin-bottom: 15px;
+            }
+            &__barre{
+                background: #d6d6d6;
+                height: 15px;
+                width: 10%;
+                &.-first{
+                    border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+                }
+                &.-last{
+                    border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+                }
+                &.-spaceh{
+                    margin-right: 5px;
+                }
+                &.-active{
+                    background: $main-orange;
+                }
+                
+            }
+        }
+        
+        &__barres{
+            vertical-align: bottom;
+            @for $i from 0 through 100{ //La boucle permet de créer une classe pour chaque pourcentage de la barre, allant de 0 à 100
+                &__barre-#{$i}{
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid black;
+                    border-right: 1px solid black;
+                    background: #d6d6d6;
+                    height: 30px;
+                    &:after{
+                        content: '';
+                        display: block;
+                        background: $main-orange;
+                        width: #{$i} + "%";
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__moyenne{
+        border: 1px solid black;
+        //margin-left: 15px;
+        &__text{
+            font-family: $policeTitre;
+            color: $main-orange;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        &__p{
+            font-family: $proxima;
+            margin-left: 65px;
+            margin-right: 65px;
+            
+        }
+        &__rond{
+            background-color: $main-orange;
+            margin-right: 10px;
+            border-radius: 100%;
+            padding : 15px 15px 15px 15px;
+
+        }
+    }
+    
+}

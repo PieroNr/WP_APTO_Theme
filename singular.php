@@ -5,8 +5,8 @@
     /** @link https://developer.wordpress.org/themes/basics/the-loop/  */
     if( have_posts() ): while( have_posts() ) : the_post();
 
-    echo get_the_ID(  );
-    echo get_the_title( );
+    /*echo get_the_ID(  );
+    echo get_the_title( );*/
     
 
         /** @link https://developer.wordpress.org/reference/functions/get_template_part/ */

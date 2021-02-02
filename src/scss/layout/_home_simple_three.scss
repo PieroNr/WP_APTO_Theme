@@ -1,0 +1,37 @@
+.simpleThree{
+    background: $main_black;
+    padding-top: 25px;
+    &-content{
+
+        &-text{
+            
+
+            &__desc{
+                font-family: $policeTitre;
+                color: $main_white;
+                font-size: 50px;
+            }
+
+        }
+
+        &-image{
+            height: auto;
+            width: auto;
+
+        }
+    }
+}
+
+@include medium-down(){
+    .simpleThree{
+
+        &-content{
+    
+            &-text{ 
+                &__desc{
+                    font-size: 35px;
+                }
+            }
+        }
+    } 
+}

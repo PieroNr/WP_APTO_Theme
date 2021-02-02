@@ -1,0 +1,64 @@
+.perso{
+
+    &-content{
+
+        &-titleDesc{
+            &__title{
+                font-family: $policeTitre;
+                color: $main_black;
+                font-size: 50px;
+
+            }
+            &__desc{
+                font-family: $proxima;
+                color: $main_black;
+                font-size: 40px;
+            }
+        }
+
+        &__button{
+            background: $main_orange;
+            color: $main_white;
+            font-family: $proxima_black;
+            font-weight: bolder;
+            font-size: 30px;
+            text-decoration: none;
+            padding: 10px 60px 10px 60px;
+            border-radius: 10px;
+            transition: background 0.4s cubic-bezier(.17,.67,1,1.23);
+
+            &:hover{
+                background: $orange_hover;
+            }
+        }
+    }
+}
+
+@include medium-down(){
+    .perso{
+
+        &-content{
+    
+            &-titleDesc{
+                &__title{
+                    font-size: 35px;
+    
+                }
+                &__desc{
+
+                    font-size: 25px;
+                }
+            }
+            &__button{
+                background: $main_orange;
+                color: $main_white;
+                font-family: $proxima_black;
+                font-weight: bolder;
+                font-size: 20px;
+                text-decoration: none;
+                padding: 10px 30px 10px 30px;
+
+            }
+        }
+    }
+}

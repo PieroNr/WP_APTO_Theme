@@ -39,8 +39,14 @@ $x-large : 1200px;
     } 
 }
 
+@mixin medium-down(){
+    @media screen and (max-width : $large - 1){
+        @content;
+    } 
+}
+
 @mixin medium-up(){
-    @media screen and (min-width : $medium){
+    @media screen and (min-width : $large - 1){
         @content;
     } 
 }

@@ -1,0 +1,45 @@
+.modes-content{
+    text-align: center;
+    height: max-content;
+    &-titleDesc{
+        &__title{
+            font-family: $policeTitre;
+            font-weight: bold;
+            font-size: 3em;
+            margin-bottom: 13px;
+        }
+        &__description{
+            font-family: $policeCorps; 
+            font-size: 2em;
+            margin: 0;
+        }
+    }
+
+    .conteneur-mode{
+        display: flex;
+        justify-content: center;
+        font-family: $policeCorps;
+        align-content: center;
+        
+        
+    }
+    &-detail{
+        
+        margin-top: 25px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 80%;
+        font-size: 1.5em;
+        &-one{   
+            //margin: 0.7em 2em;         
+            &-picto{
+                height:50%;
+                width: 50%;
+
+            }
+        }
+    }
+}
+
+

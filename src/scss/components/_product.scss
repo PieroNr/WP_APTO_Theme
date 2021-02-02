@@ -11,3 +11,9 @@ $product-border :#333;
         border-top : 1px solid $product-border;
     }
 }
+
+#product-final-price{
+    color: $main_orange;
+    font-family: $proxima;
+    font-size: rem(35);
+}

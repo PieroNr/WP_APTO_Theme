@@ -64,6 +64,8 @@ node_modules/
 ehthumbs.db
 Thumbs.db
 
+dist/css/main.css
+
 # ignore Editor files
 *.sublime-project
 *.sublime-workspace
@@ -105,3 +107,4 @@ Thumbs.db
 !.gitignore
 !.editorconfig
 !.phpcs.xml.dist
+dist/css/main.css
