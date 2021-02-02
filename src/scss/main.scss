@@ -7,14 +7,22 @@
 @import "./foundation/animations";
 
 // Elements
+@import "./elements/buttons";
+@import "./elements/input";
 @import "./elements/burger";
+@import "./elements/header";
+@import "./elements/footer";
 
 // Components
 //@import "./components/nav-css-animation";
 @import "./components/nav-css-animation";
+@import "./components/product";
+@import "./components/dots"; 
+@import "./components/form"; 
 
 //layout
-
+@import "./layout/woocommerce";
+@import "./layout/personnalisation";
 
 //Pages
 @import "./home";

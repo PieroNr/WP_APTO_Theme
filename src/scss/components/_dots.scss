@@ -1,0 +1,63 @@
+$colors : ("noir", #000), ("rouge", #DE6464), ("rose", #ECA2CF), ("violet", #B44DB4), 
+("bleu", #584BB4), ("bleuclair", #94CFE2), ("vert", #9FD8B2), ("vertclair", #DCE8BA), ("blanc", #FFFFFF);
+
+
+.c-colorDots{  
+    padding : 0;
+    margin-bottom: 50px;
+    &__item{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background : gray;
+        display : inline-block;
+        margin : 0 0.5rem;
+        position : relative;
+        cursor: pointer;
+        border: 2px solid black;
+        margin-bottom: 10px;
+        
+        @each $color in $colors {
+            &.-#{nth($color, 1)}{
+                background : #{nth($color, 2)}
+            }
+        }
+        &.-active{
+            &:before{
+                content : "";
+                position : absolute;
+                height : 34px;
+                width: 34px;
+                left: -7px;
+                top : -7px;
+                border-radius: 100%;
+                border : 3px solid black;
+            }
+
+        }
+    }
+} 
+
+.c-dots{  
+    padding : 0;
+    list-style: none;
+    &__item{
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        line-height: 36px;
+        font-size : 12px;
+        text-align: center;
+        overflow: hidden;
+        border : 2px solid #ddd;
+        display : inline-block;
+        cursor: pointer;
+        font-family: $proxima;
+        &.-active{
+            border : 2px solid black;
+
+        }
+    }
+    
+
+}
