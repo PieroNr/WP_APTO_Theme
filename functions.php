@@ -6,6 +6,7 @@
         wp_enqueue_style( 'main', get_template_directory_uri() .'/dist/css/main.css' );  
         wp_enqueue_script( 'perso', get_template_directory_uri() . '/dist/js/perso.js', array('jquery'), '2.0', true);
         wp_enqueue_script( 'navigation', get_template_directory_uri() . '/dist/js/main-csss-animation.js', array(), '2.0', true);
+        wp_enqueue_script( 'Menu', get_template_directory_uri() . '/dist/js/menuBurger.js', array(), '2.0', true);
     }
 
     /** @link https://developer.wordpress.org/plugins/hooks/ */
@@ -59,36 +60,57 @@
             $menu = get_term( $locations[$theme_location], 'nav_menu' );
             $menu_items = wp_get_nav_menu_items($menu->term_id);
      
-            $menu_list  = '<nav class="c-nav">' ."\n";
-            $menu_list .= '<ul class="c-nav__list">' ."\n";
-     
-            $count = 0;
-            $submenu = false;
+            $menu_list  = '<div class="headerPages">' ."\n";
+
              
             foreach( $menu_items as $menu_item ) {
                  
                 $link = $menu_item->url;
                 $title = $menu_item->title;
-                 
-                if ( !$menu_item->menu_item_parent ) {
-                    $parent_id = $menu_item->ID;
-                     
-                    $menu_list .= '<li class="c-nav__item">' ."\n";
-                    $menu_list .= '<a href="'.$link.'" class="c-nav__link">'.$title.'</a>' ."\n";
-                }
-     
-               
-     
-                if ( $menu_items[ $count + 1 ]->menu_item_parent != $parent_id ) { 
-                    $menu_list .= '</li>' ."\n";      
-                    $submenu = false;
-                }
-     
-                $count++;
+                
+                $menu_list .= '<div class="headerPages__link">' . "\n";
+                $menu_list .= '<a href="'.$link.'">'.$title.'</a>'. "\n";
+                $menu_list .= '</div>' . "\n";
             }
+            $menu_list .= '<div class="row buttonsNav">' . "\n";
+            $menu_list .= '<button class="buttonConnexion col-l-12 col-md-12 col-sm-6">Connexion</button>' . "\n";
+            $menu_list .= '<button class="buttonInscription col-l-12 col-md-12 col-sm-6">Inscription</button>' . "\n";
+            $menu_list .= '</div>' . "\n";
+            $menu_list .= '<button class="buttonPanier">Panier</button>' . "\n";
+            $menu_list .= '</div>' . "\n";
+
+        } else {
+            $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+        }
+        echo $menu_list;
+    }
+
+    function lpwd_clean_custom_menuSecond( $theme_location ) {
+        if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+            $menu = get_term( $locations[$theme_location], 'nav_menu' );
+            $menu_items = wp_get_nav_menu_items($menu->term_id);
+     
+            
+            $menu_list  = '<nav class="secondaryHeaderNav">'."\n";
+            $menu_list  .= '<ul class="secondaryHeaderPages">'."\n";
+
              
-            $menu_list .= '</ul>' ."\n";
-            $menu_list .= '</nav>' ."\n";
+            foreach( $menu_items as $menu_item ) {
+                 
+                $link = $menu_item->url;
+                $title = $menu_item->title;
+                
+                $menu_list .= '<li class="secondaryHeaderPages__link">' . "\n";
+                $menu_list .= '<a href="'.$link.'">'.$title.'</a>'. "\n";
+                $menu_list .= '</li>' . "\n";
+            }
+            $menu_list .= '</ul>' . "\n";
+            $menu_list .= '</nav>' . "\n";
+            $menu_list .= '<button class="buttonAchat">Acheter maintenant</button>' . "\n";
+            
+            
+             
+
      
         } else {
             $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
@@ -99,7 +121,9 @@
     /** @link https://developer.wordpress.org/reference/functions/register_nav_menus/*/
     function lpwd_register_menus() {
         register_nav_menus( array(
-            'navigation' =>  'Navigation de mon site'
+            'navigation' =>  'Navigation de mon site',
+            'navigation-second' =>  'Navigation pour montre',
+            'footer-menu' => 'Menu Footer' ,
         ) );
     }
     add_action( 'init', 'lpwd_register_menus' );

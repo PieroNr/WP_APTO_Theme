@@ -18,14 +18,36 @@
 <body>
 
 <header class="header">
-        <div class="header__burgercontainer">
-            <div class="burger"></div>
+        <div class="wrapper-mob">
+            <div class="header__logo-mobile">
+                <img src="<?php echo get_template_directory_uri() .'/dist/images/logo_apto2.png' ?>" alt="" width="70px">
+            </div>
+            <a class="burgerMobile" onclick="openMenu();">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
         </div>
-        <?php lpwd_clean_custom_menu("navigation") ?>
-    </header>
 
-    <?php if (get_the_title() == "Qui sommes nous ?" || get_the_title() == "Contact" ){ ?>
-        <div class="container -black">
-    <?php } else { ?>
-        <div class="container ">
-    <?php } ?> 
+        <div class="menu -close">
+            <div class="mainHeader">
+                <div class="header__logo">
+                    <img src="<?php echo get_template_directory_uri() .'/dist/images/logo_apto2.png' ?>" alt="" width="80px">
+                </div>
+                
+        
+                <div class="headerPages">
+                    <?php lpwd_clean_custom_menu("navigation") ?>
+                </div>
+            </div>
+            <div class="secondaryHeader">
+                
+            <?php lpwd_clean_custom_menuSecond("navigation-second") ?>
+            
+            </div>
+            
+        </div>  
+        
+</header>
+
+        

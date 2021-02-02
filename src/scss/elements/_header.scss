@@ -1,0 +1,273 @@
+
+@media screen and (max-width: 900px){
+    body{
+        max-width: 900px;
+    }
+    .header{
+        
+        position: fixed;
+        width: 100%;
+
+        & a {
+            text-decoration: none;
+            color: #f4f4f4;
+        }
+    }
+
+    .wrapper-mob{
+        background-color: #202020;
+        padding: 1em;
+    }
+    .header span{
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        
+        background: #f4f4f4;
+        border-radius: 3px;
+        
+        z-index: 1;
+        
+        transform-origin: 4px 0px;
+        
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+    }
+
+    .headerPages, .secondaryHeader{
+        text-align: center;
+        
+        
+        
+            
+    }
+
+    .headerPages{
+        font-size: 1.2em;
+        
+    }
+
+    .secondaryHeaderNav ul{
+        list-style:none;
+        margin-left:0;
+        padding-left:0;
+        font-size: 2em;
+        
+        
+    }
+
+    .-close{
+        display: none;
+        transform: translate3d(0,-900px,0);
+        transition-duration: 0.3s;
+    }
+
+    .-open{
+        display: flex;
+        transform: translate3d(0,0,0);
+        transition-duration: 0.3s;
+       
+        
+    }
+
+    .menu{
+        
+        flex-direction: column-reverse;
+        background-color: #202020;
+        font-family: $policeCorps;
+        padding: 1em;
+        
+    }
+
+    .header__logo{
+        display: none;
+    }
+
+    .wrapper-mob{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .buttonAchat{
+        display: none;
+    }
+
+    .secondaryHeaderPages__link{
+        margin-top: 1em;
+    }
+
+    .headerPages__link{
+        margin-top: 0.5em;
+    }
+
+    .buttonConnexion, .buttonInscription, .buttonPanier{
+        width: 38%;
+        line-height: 2em;
+        font-family: $policeCorps;
+        font-weight: bold;
+        font-size: 0.8em;
+
+    }
+
+    .buttonPanier{
+       width: 80%;
+       margin-top: 10px;
+    }
+
+    .buttonConnexion, .buttonInscription{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .buttonsNav{
+        margin-top: 3em;
+        justify-content: center;
+        margin-left: -5px;
+        margin-right: -5px;
+        
+    }
+
+    
+    
+
+}
+
+@media screen and (min-width: 900px){
+    .header{
+        .mainHeader{
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            width: 100%;
+            z-index: 5;
+    
+        }
+    
+        &__logo{
+            margin: 10px 0 0 10px;
+        }
+    
+        .headerPages{
+            display: flex;
+            justify-content: space-between;
+            width:600px;
+        
+            &__link{
+                margin: auto 10px;
+                background: linear-gradient(to right, #FF6600, #FF6600 50%, $main_black 50%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-size: 200% 100%;
+                background-position: 100%;
+                transition: background-position 175ms ease;
+                cursor: pointer;
+                font-family: $policeCorps;
+                font-weight: bold;
+                font-size: 1.2rem;
+            
+                &:hover{
+                    background-position: 0 100%;
+                }
+            }
+        }
+    
+        .buttonConnexion {
+            background-color: $main_white;
+            font-family: 'Proxima Nova', sans-serif;
+            font-size: 1.5rem; 
+            text-decoration: none;
+            padding: 0px 25px 0px 25px;
+            border-radius: 1rem;
+            color: $main_black;
+            box-shadow: 0 0.05em 0.1em rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            outline: none;
+            height: 40px;
+            margin: auto 10px;
+        }
+    }
+    
+    
+    .secondaryHeader{
+        display: flex;
+        justify-content: space-between;
+        background-color: $main_black;
+    
+        &Nav{
+            width: 80%;
+        }
+    
+        .secondaryHeaderPages{
+            display: flex;
+            justify-content: space-between;
+    
+            &__link{
+                padding-left: 30px;
+                background: linear-gradient(to right, #FF6600, #FF6600 50%, $main_white 50%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-size: 200% 100%;
+                background-position: 100%;
+                transition: background-position 175ms ease;
+                cursor: pointer;
+                font-family: $policeCorps;
+                font-weight: bold;
+                font-size: 1.2rem;
+                list-style-type: none;
+                
+        
+                &:hover{
+                    background-position: 0 100%;
+                }
+            }
+        }
+    
+        
+    
+        .buttonAchat{
+            background-color:  #FF6600;  
+            color: $main_white;
+            font-family: 'Proxima Nova Black', sans-serif;
+            border-radius: 0.5rem;
+            box-shadow: none;
+            border: none;
+            height: 40px;
+            margin: auto 10px;
+    
+        }
+    }
+
+    .burgerButton{
+        display: none;
+    }
+
+    .header__logo-mobile{
+        display: none;
+    }
+
+    .buttonInscription, .buttonPanier{
+        display: none;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
