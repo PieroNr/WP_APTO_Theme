@@ -1,0 +1,53 @@
+.sectionSecondaireEmballage{
+    .sectionEmballage-content{
+        margin-top: 50px;
+        &__title{
+            font-family: $policeTitre;
+            font-weight: bold;
+            font-size: rem(40);
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 100px;
+        }
+        &-features{
+            width: 80%;
+            margin: auto;
+        }
+        &-featuresUnique{
+            text-align: center;
+            &__Img{
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 20vh;
+                margin-bottom: 20px;
+            }
+            &__title{
+                font-family: $policeTitre;
+                font-weight: bold;
+                font-size: rem(20);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $large) {
+    .sectionSecondaireEmballage{
+        .sectionEmballage-content{
+            &__title{
+                font-size: rem(30);
+                margin-bottom: 50px;
+            }
+            &-featuresUnique{
+                margin-bottom: 20px;
+                &__Img{
+                    display: none;
+                }
+                &__title{
+                    font-size: rem(20);
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
