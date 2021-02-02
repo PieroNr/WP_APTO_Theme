@@ -484,29 +484,34 @@
                 <a class="modal_social__facebook title -api"> <i class="fa fa-facebook"></i> </a>
                 <a class="modal_social__google title -api" > <i class="fa fa-google"></i> </a> 
             </div>
-            <div class="row row__center">
-                <div class="col-8">
-                    <input class="modal__input" type="text" placeholder="Adresse Mail">
-                </div>       
-            </div>
-            <div class="row row__center">
-                <div class="col-8">
-                    <input class="modal__input" type="text" placeholder="Mot de passe">
+
+            <form method="post" action="<?php echo get_home_url()?>/wp-login.php" id="loginform" name="loginform">
+                <div class="row row__center">
+                    <div class="col-8">
+                        <input class="modal__input" type="text" id="user_login" name="log" placeholder="Nom d'utilisateur">
+                    </div>       
                 </div>
-            </div>
-            <div class="row row__center">
-                <div class="col-8">
-                    <div class="row__left">
-                    <input class="modal__checkbox" type="checkbox" id="stayco" name="stayco" checked>
-                    <label class="modal__check" for="stayco">Rester connecté</label>
+                <div class="row row__center">
+                    <div class="col-8">
+                        <input class="modal__input" type="password" id="user_pass" name="pwd" placeholder="Mot de passe">
                     </div>
                 </div>
-            </div>
-            <div class="row row__center" style="margin-top : 20px;">
-                <div class="col-8">
-                <button href="#" class="modal__button" style="margin-top: 20px;">Connexion</button>
+            
+                <div class="row row__center">
+                    <div class="col-8">
+                        <div class="row__left">
+                        <input class="modal__checkbox" type="checkbox" id="stayco" name="stayco" checked>
+                        <label class="modal__check" for="stayco">Rester connecté</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="row row__center" style="margin-top : 20px;">
+                    <div class="col-8">
+                        <input type="submit" tabindex="100" value="Se connecter" id="wp-submit" name="wp-submit" class="modal__button">
+                        <input type="hidden" value="<?php echo get_home_url()?>" name="redirect_to">
+                    </div>
+                </div>
+            </form>
             <div class="row row__center" style="margin-top : 20px;">
                 <div class="col-10">
                     <a href="#" id="switchToRegister" class="modal__textsm">Si vous ne possédez pas de compte : Inscription</a>
@@ -529,7 +534,7 @@
                 <a class="modal_social__facebook title -api"> <i class="fa fa-facebook"></i> </a>
                 <a class="modal_social__google title -api" > <i class="fa fa-google"></i> </a> 
             </div>
-            <div class="row row__center">
+            <!-- <div class="row row__center">
                 <div class="col-8">
                     <input class="modal__input" type="text" placeholder="Prénom">
                 </div>       
@@ -558,8 +563,8 @@
                 <div class="col-8">
                 <button href="#" class="modal__button" style="margin-top: 20px;">Inscription</button>
                 </div>
-            </div>
-            
+            </div> -->
+            <?php echo register_user_form();?>  
             <div class="row row__center" style="margin-top : 20px;">
                 <div class="col-10">
                     <a href="#" id="switchToLogin" class="modal__textsm">Si vous avez déjà un compte : Connexion</a>

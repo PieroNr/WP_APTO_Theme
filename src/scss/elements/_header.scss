@@ -109,7 +109,7 @@
         margin-top: 0.5em;
     }
 
-    .buttonConnexion, .buttonInscription, .buttonPanier{
+    .buttonConnexion, .buttonDeconnexion, .buttonInscription, .buttonPanier{
         width: 38%;
         line-height: 2em;
         font-family: $policeCorps;
@@ -123,10 +123,16 @@
        margin-top: 10px;
     }
 
-    .buttonConnexion, .buttonInscription{
+    .buttonConnexion, .buttonInscription, .buttonDeconnexion{
         margin-left: 5px;
         margin-right: 5px;
     }
+
+    .buttonDeconnexion{
+        background-color: #e5e5e5;
+        color: $main_black !important;
+    }
+    
 
     .buttonsNav{
         margin-top: 3em;
@@ -181,7 +187,7 @@
             }
         }
     
-        .buttonConnexion {
+        .buttonConnexion, .buttonDeconnexion {
             background-color: $main_white;
             font-family: 'Proxima Nova', sans-serif;
             font-size: 1.5rem; 
@@ -196,6 +202,10 @@
             outline: none;
             height: 40px;
             margin: auto 10px;
+        }
+
+        .buttonDeconnexion{
+            padding-top: 5px;
         }
     }
     
