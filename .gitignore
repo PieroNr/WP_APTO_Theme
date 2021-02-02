@@ -107,3 +107,4 @@ dist/css/main.css
 !.gitignore
 !.editorconfig
 !.phpcs.xml.dist
+dist/css/main.css

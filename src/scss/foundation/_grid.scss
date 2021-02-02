@@ -1,7 +1,9 @@
 $maxColumns : 12;
 
 .container{
+    
     margin : 0 auto;
+    background-color: $main_white;
 
     &.-black{
         background-color: $main_black;

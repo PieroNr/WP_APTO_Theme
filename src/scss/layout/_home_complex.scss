@@ -1,0 +1,55 @@
+.complex-content{
+    text-align: center;
+    height: auto;
+
+    &__title{
+        font-family: $policeTitre;
+        font-weight: bold;
+        font-size: 3em;
+        margin-bottom: 13px;
+    }
+
+    &-options{
+        margin-top: 2em;
+        font-family: $policeCorps;
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+        &-one{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            
+            
+
+            &-titleDesc{
+                text-align: left;
+                margin-left: 1em;
+                max-width: 450px;
+    
+                &__title{
+                    font-size: 2em;
+                    margin: 0.2em 0;
+                }
+    
+                &__desc{
+                    font-size: 1.5em;
+                    margin: 0.2em 0;
+                }
+            }
+        }
+        
+    }
+
+    &-image{
+        margin-top: 2em;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        height: 70vh;
+        width: 100%;
+    }
+}
+
+    

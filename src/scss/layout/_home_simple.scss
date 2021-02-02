@@ -1,0 +1,67 @@
+#type1.simple-content{
+    
+    text-align: center;
+    background-image: none !important;
+    height: 100vh;
+    
+    
+}
+.simple-content{
+
+    &-titleDesc{
+        
+        &__title{
+            font-family: $policeTitre;
+            font-weight: bold;
+            font-size: 3em;
+            margin-bottom: 13px;
+        }
+        &__description{
+            font-family: $policeCorps; 
+            font-size: 2em;
+            margin: 0;
+        }
+    }
+
+    &-image{
+        background-repeat: no-repeat;
+        background-position: center;
+        //background-size:cover;
+        height: auto;
+        width: 100%;
+    }
+}
+
+#type2 > .simple-content-image {
+    display: none;
+} 
+
+#type2 > .simple-content-titleDesc  {
+    color: $main_white;
+    padding-top: 1em;
+}
+
+#type2.simple-content{
+    margin-top: 3em;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -250px;
+    height: 100%;
+    background-color: #1a1d22;
+    
+    
+}
+
+@media screen and (min-width: 2200px) {
+
+    #type2.simple-content{
+        background-position-y: -500px;
+  
+    }
+
+}
+
+
+
