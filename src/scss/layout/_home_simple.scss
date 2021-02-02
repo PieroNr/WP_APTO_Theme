@@ -24,10 +24,10 @@
     }
 
     &-image{
-        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        height: 100vh;
+        //background-size:cover;
+        height: auto;
         width: 100%;
     }
 }

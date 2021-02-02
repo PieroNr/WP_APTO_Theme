@@ -25,20 +25,18 @@
     }
     &-detail{
         
-        margin-top: 3.5em;
+        margin-top: 25px;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        width: 70%;
+        width: 80%;
         font-size: 1.5em;
         &-one{   
-            margin: 0.7em 2em;         
+            //margin: 0.7em 2em;         
             &-picto{
+                height:50%;
+                width: 50%;
 
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
-                
             }
         }
     }

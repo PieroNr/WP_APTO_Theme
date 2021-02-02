@@ -2,19 +2,19 @@
 @keyframes slidy {
     0% { left: 0%;}
     20% { left: 0%;}
-    25% { left: -100%;}
+    25% { left: 0%;}
     45% { left: -100%;}
-    50% { left: -200%;}
-    70% { left: -200%;}
-    75% { left: -300%;}
-    95% { left: -300%;}
-    100% { left: -400%;}
+    50% { left: -100%;}
+    70% { left: -100%;}
+    75% { left: -200%;}
+    95% { left: -200%;}
+    100% { left: -200%;}
 }
 
-.slideOne{
+.sliderTwo{
     width: 100%;
     overflow: hidden;
-    background-color: $main_black;
+    background-color: $main_white;
     height: 100vh;
 
     &-content{
@@ -23,7 +23,7 @@
         margin: 0;
         padding: 0;
         text-align:left ;
-        animation: 30s slidy infinite;
+        animation: 15s slidy infinite;
 
         &-slide{
             width: 20%;
@@ -35,9 +35,33 @@
 }
 /*****************************************/
 
-.slideOne{
+.sliderTwo{
+    &__title{
+        font-family: $policeTitre;
+        font-weight: bold;
+        color: $main_black;
+        font-size: 45px;
+        margin-left:15px;
+
+    }
+    &__slide{
+        &__title{
+            font-family: $proxima;
+            font-weight: bold;
+            color: $main_white;
+            font-size: 40px;
+    
+        }
+        &__desc{
+            font-family: $proxima;
+            color: $main_white;
+            font-size: 25px;
+    
+        }
+    }
+    
     &-content{
-        &-slide{
+        &-slides{
             text-align: center;
             &-titleDesc{
                 color: $main_white;
@@ -60,28 +84,26 @@
     }
 }
 
-.slideOne-content-slide-image{
-    
-    -msm-transform: skew(-10deg,0deg);
-	-moz-transform: skew(-10deg,0deg);
-	-o-transform: skew(-10deg,0deg);
-	-webkit-transform: skew(-10deg,0deg);
-    transform: skew(-10deg,0deg);
-    
-    
-}
-
 @include medium-down(){
-    .slideOne-content-slide-image{
-    
-        -msm-transform: skew(0deg,0deg);
-        -moz-transform: skew(0deg,0deg);
-        -o-transform: skew(0deg,0deg);
-        -webkit-transform: skew(0deg,0deg);
-        transform: skew(0deg,0deg);
+
+    .sliderTwo{
+        &__title{
+            font-size: 35px;
+            margin-left: 0;
+            text-align: center;
+        }
+        &__slide{
+            &__title{
+
+                font-size: 30px !important;
         
-        
+            }
+            &__desc{
+                font-size: 15px;
+            }
+        }
     }
+
 }
 
 

@@ -1,0 +1,60 @@
+.simpleTwo{
+    &-content{
+
+        &-options{
+
+            &-one{
+                margin-top: 25px;
+
+                &.-left{
+                    float: left;
+
+                }
+                &.-right{
+                    float: right;
+                }
+                &-image{
+                    width: 100%;
+                    height: 100vh;
+                }
+
+                &__title{
+                    font-family: $policeTitre;
+                    font-weight: bold;
+                    color: $main_black;
+                    font-size: 50px;
+
+                }
+                &__desc{
+                    font-family: $proxima;
+                    color: $main_black;
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+}
+
+@include medium-down(){
+    .simpleTwo{
+        &-content{
+    
+            &-options{
+    
+                &-one{
+                    &__title{
+                        font-size: 35px;
+    
+                    }
+                    &__desc{
+                        font-size: 25px;
+                    }
+                    &-image{
+                        background-size: contain !important;
+                        height: 30vh !important;
+                    }
+                }
+            }
+        }
+    }
+}

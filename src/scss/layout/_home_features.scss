@@ -1,0 +1,53 @@
+.featuresHome{
+
+    &-content{
+
+        &__title{
+            font-family: $policeTitre;
+            font-size: 50px;
+            color: $main_black;
+        }
+        &-detail{
+
+            &-one{
+
+                &__picto{
+                    width: 30%;
+                    height: 30%;
+                }
+
+                &__name{
+                    font-family: $proxima;
+                    color: $main_black;
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}
+
+@include medium-down(){
+    .featuresHome{
+
+        &-content{
+    
+            &__title{
+                font-size: 35px;
+            }
+            &-detail{
+    
+                &-one{
+    
+                    &__picto{
+                        width: 50%;
+                        height: 50%;
+                    }
+    
+                    &__name{
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

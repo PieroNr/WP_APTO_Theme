@@ -11,8 +11,10 @@
             if( have_rows('home_section_modes_mode')):
                 while( have_rows('home_section_modes_mode') ): the_row();
                        
-                    $mode_pictogram = wp_get_attachment_image( get_sub_field('home_section_modes_mode_image')['ID']); 
-                    $modes_name= get_sub_field('home_section_modes_mode_name');
+                    //$mode_pictogram = wp_get_attachment_image( get_sub_field('home_section_modes_mode_image')['ID']); 
+                    $mode_pictogram = get_sub_field('home_section_modes_mode_image')['url']; 
+                    $modes_name= get_sub_field('nomhome_section_modes_mode_name');
+
                     $oneMode = [$mode_pictogram,$modes_name];
                     array_push($tab_modes,$oneMode);
 
@@ -31,13 +33,18 @@
                     <div class="modes-content-detail">
                         <?php 
 
+
                             for ($i=0; $i < count($tab_modes); $i++) { ?>
-                                <div class="modes-content-detail-one">
-                                    <div class="modes-content-detail-one-picto" >
-                                        <?php echo $tab_modes[$i][0]; ?>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                            <div class="modes-content-detail-one">
+                                    <div class="" >
+                                        <img class="modes-content-detail-one-picto" src="<?php echo $tab_modes[$i][0]; ?>" alt="">
+                                         
                                     </div>
-                                    <p class="modes-content-detail-one__name"><?php echo $tab_modes[$i][1]; ?></p>
+                                    <p class="modes-content-detail-one__name d-sm-none"><?php echo $tab_modes[$i][1]; ?></p>
                                 </div> 
+                            </div>
+                                
                                   
                             <?php  
                             };

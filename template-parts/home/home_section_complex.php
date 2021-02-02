@@ -9,7 +9,7 @@
                  <div class="complex-content">
                     <h1 class="complex-content__title"><?php echo $section_title; ?></h1>
 
-                    <div class="complex-content-options row">                 
+                    <div class="complex-content-options row row__center">                 
 
                         <?php
                         $section_options = get_sub_field('home_section_complex_fonction');
@@ -20,10 +20,10 @@
                             $options_picto =$section_options[$i]['home_section_complex_fonction_pictogram'];  ?>  
 
                             <div class="complex-content-options-one col-xl-6 col-l-6 col-md-12">
-                                <div class="complex-content-options-one-picto"><?php echo wp_get_attachment_image($options_picto['ID'],array(125,125)); ?></div>
-                                <div class="complex-content-options-one-titleDesc">
-                                    <p class="complex-content-options-one-titleDesc__title"><?php echo $options_title; ?></p>
-                                    <p class="complex-content-options-one-titleDesc__desc"><?php echo $options_description; ?></p>
+                                <div class="complex-content-options-one-picto col-12"><?php echo wp_get_attachment_image($options_picto['ID'],array(125,125)); ?></div>
+                                <div class="complex-content-options-one-titleDesc" style="margin-left:15px; margin-right:15px;">
+                                    <p class="complex-content-options-one-titleDesc__title col-12 row__center"><?php echo $options_title; ?></p>
+                                    <p class="complex-content-options-one-titleDesc__desc col-12 row__center"><?php echo $options_description; ?></p>
                                 </div>
                                 
                             </div>
@@ -34,7 +34,7 @@
 
                 <?php $section_image= wp_get_attachment_image_src( get_sub_field('home_section_complex_image')['ID'],'full');  ?>        
                         
-                        <div class="complex-content-image" style="background-image: url(<?php echo $section_image[0]; ?>);"></div>
+                        <div class="row complex-content-image" style="background-image: url(<?php echo $section_image[0]; ?>);"></div>
             
                 </div>
             </div>

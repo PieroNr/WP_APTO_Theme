@@ -24,10 +24,10 @@
             $background_img = wp_get_attachment_image_src( get_sub_field('home_banier_image')['ID'],'full'); ?>
 
             <div class="banier -sectionHome">
-                <div class="banier-content" style="background-image: url(<?php echo $background_img[0]; ?>);">
+                <div class="banier-content" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(<?php echo $background_img[0]; ?>);">
 
                     <div class="banier-content-titleSlogan">
-                        <h1 class="banier-content-titleSlogan__title"><?php echo $title_Site; ?></h1>
+                        <h1 class="banier-content-titleSlogan__title col-xs-12"><?php echo $title_Site; ?></h1>
                         <h3 class="banier-content-titleSlogan__slogan"><?php echo $slogan; ?></h3>
                     </div>
 
