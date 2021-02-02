@@ -1,0 +1,36 @@
+
+.button{
+    $this : &;
+    background : $main_orange;
+    color : white;
+    font-size: rem(16);
+    border : 2px solid $main_orange;
+    display: inline-block;
+    padding : rem(14) rem(16);
+    border-radius : 5px;
+    text-decoration: none;
+    font-family: $proxima;
+    font-size: rem(20);
+    cursor: pointer;
+
+    &__selection{
+        display : none;
+    }
+
+    &.-active{
+        #{$this}__label{
+            display : none;
+        }
+        #{$this}__selection{
+            display : flex;
+        }
+    }
+}
+.button:hover{
+    color : $main_black;
+    background : white;
+}
+
+.button.-secondary{
+    background : $main_orange;
+}
