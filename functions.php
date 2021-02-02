@@ -82,8 +82,8 @@
             if($user_info) {
                 $menu_list .= '<a href="' . get_home_url() . '/wp-login.php?action=logout" class="buttonDeconnexion col-l-12 col-md-12 col-sm-6">Déconnexion</a>' . "\n";
             } else {
-                $menu_list .= '<button class="buttonConnexion col-l-12 col-md-12 col-sm-6">Connexion</button>' . "\n";
-                $menu_list .= '<button class="buttonInscription col-l-12 col-md-12 col-sm-6">Inscription</button>' . "\n";
+                $menu_list .= '<button id="btnLogin" class="buttonConnexion col-l-12 col-md-12 col-sm-6">Connexion</button>' . "\n";
+                $menu_list .= '<button id="btnRegister" class="buttonInscription col-l-12 col-md-12 col-sm-6">Inscription</button>' . "\n";
             }
             
             $menu_list .= '</div>' . "\n";
