@@ -4,9 +4,11 @@
      * ********************************/
     function lpwd_add_styles_and_scripts() {
         wp_enqueue_style( 'main', get_template_directory_uri() .'/dist/css/main.css' );  
+        wp_enqueue_style( 'load-fa', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css' );
         wp_enqueue_script( 'perso', get_template_directory_uri() . '/dist/js/perso.js', array('jquery'), '2.0', true);
         wp_enqueue_script( 'navigation', get_template_directory_uri() . '/dist/js/main-csss-animation.js', array(), '2.0', true);
         wp_enqueue_script( 'Menu', get_template_directory_uri() . '/dist/js/menuBurger.js', array(), '2.0', true);
+        
     }
 
     /** @link https://developer.wordpress.org/plugins/hooks/ */
@@ -107,6 +109,41 @@
             $menu_list .= '</ul>' . "\n";
             $menu_list .= '</nav>' . "\n";
             $menu_list .= '<button class="buttonAchat">Acheter maintenant</button>' . "\n";
+            
+            
+             
+
+     
+        } else {
+            $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+        }
+        echo $menu_list;
+    }
+
+    function lpwd_clean_custom_Footer( $theme_location ) {
+        if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+            $menu = get_term( $locations[$theme_location], 'nav_menu' );
+            $menu_items = wp_get_nav_menu_items($menu->term_id);
+            $homeURL = get_home_url();
+     
+            
+            $menu_list  = '<div class="footer-left">'."\n";
+            $menu_list  .= '<p class="footer-links">'."\n";
+            $menu_list .= '<a class="link-1" href="'.$homeURL.'">Accueil</a>'. "\n";
+
+             
+            foreach( $menu_items as $menu_item ) {
+                 
+                $link = $menu_item->url;
+                $title = $menu_item->title;
+                
+                
+                $menu_list .= '<a href="'.$link.'">'.$title.'</a>'. "\n";
+                
+            }
+            $menu_list .= '</p>' . "\n";
+            $menu_list .= '<p>APTO &copy; 2021</p>' . "\n";
+            $menu_list .= '</div>' . "\n";
             
             
              
