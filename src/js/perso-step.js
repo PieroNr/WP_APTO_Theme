@@ -13,9 +13,6 @@ filterItems.forEach(function(item){
         if(attribute === "couleur-du-bracelet"){
             changeImage(value, ".watch__strap");
         } 
-        if(attribute === "couleur-du-cadran"){
-            changeImage(value, ".watch__dial");
-        }
 
         let select = document.getElementById(attribute);
         select.value = value; 
